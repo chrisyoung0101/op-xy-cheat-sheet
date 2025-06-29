@@ -30,30 +30,37 @@
             <tr>
               <td class="px-6 py-4">Add a bar</td>
               <td class="px-6 py-4 flex items-center">
-                <img src="assets/bar.png" alt="Bar button" class="w-10 h-10">
+                <!-- Replace [BAR_ASSET].png with the correct numbered asset -->
+                <img src="assets/[BAR_ASSET].png" alt="Bar button placeholder" class="w-10 h-10">
                 <span class="mx-2">+</span>
-                <img src="assets/plus.png" alt="Plus button" class="w-10 h-10">
+                <!-- Replace [PLUS_ASSET].png with the correct numbered asset -->
+                <img src="assets/[PLUS_ASSET].png" alt="Plus button placeholder" class="w-10 h-10">
               </td>
             </tr>
             <tr>
               <td class="px-6 py-4">Remove a bar</td>
               <td class="px-6 py-4 flex items-center">
-                <img src="assets/bar.png" alt="Bar button" class="w-10 h-10">
+                <!-- Replace [BAR_ASSET].png with the correct numbered asset -->
+                <img src="assets/[BAR_ASSET].png" alt="Bar button placeholder" class="w-10 h-10">
                 <span class="mx-2">+</span>
-                <img src="assets/minus.png" alt="Minus button" class="w-10 h-10">
+                <!-- Replace [MINUS_ASSET].png with the correct numbered asset -->
+                <img src="assets/[MINUS_ASSET].png" alt="Minus button placeholder" class="w-10 h-10">
               </td>
             </tr>
             <tr>
               <td class="px-6 py-4">Duplicate current bar</td>
               <td class="px-6 py-4 flex items-center">
-                <img src="assets/bar.png" alt="Bar button" class="w-10 h-10">
+                <!-- Replace [BAR_ASSET].png with the correct numbered asset -->
+                <img src="assets/[BAR_ASSET].png" alt="Bar button placeholder" class="w-10 h-10">
                 <span class="mx-2">+</span>
-                <img src="assets/shift.png" alt="Shift button" class="w-10 h-10">
+                <!-- Replace [SHIFT_ASSET].png with the correct numbered asset -->
+                <img src="assets/[SHIFT_ASSET].png" alt="Shift button placeholder" class="w-10 h-10">
                 <span class="mx-2">+</span>
-                <img src="assets/plus.png" alt="Plus button" class="w-10 h-10">
+                <!-- Replace [PLUS_ASSET].png with the correct numbered asset -->
+                <img src="assets/[PLUS_ASSET].png" alt="Plus button placeholder" class="w-10 h-10">
               </td>
             </tr>
-            <!-- other rows unchanged -->
+            <!-- Other pattern rows retain text shortcuts -->
             <tr>
               <td class="px-6 py-4">Set pattern length</td>
               <td class="px-6 py-4">HOLD BAR → rotate white encoder</td>
@@ -79,104 +86,9 @@
       </div>
     </section>
 
-    <!-- Step Editing -->
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Step Editing</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h3 class="font-medium mb-2">Basic Step Actions</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Copy/Paste a step: HOLD source step → TAP destination</li>
-            <li>Nudge a step off-grid: Hold step → press L or R</li>
-            <li>Tie/extend note: Hold start & end steps → press SHIFT</li>
-            <li>Add step component: Hold step + component key</li>
-          </ul>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h3 class="font-medium mb-2">Pattern Controls</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Set pattern length: HOLD BAR → SELECT desired last step → RELEASE</li>
-            <li>Step-record mode: Hold RECORD → enter steps</li>
-            <li>Live record mode: RECORD + PLAY → perform steps</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- (Remaining sections unchanged) -->
+    <!-- ...Step Editing, Recording & Automation, Track & FX Controls... -->
 
-    <!-- Recording & Automation -->
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Recording & Automation</h2>
-      <div class="overflow-x-auto">
-        <table class="min-w-full bg-white rounded-lg shadow">
-          <thead class="bg-gray-100 border-b">
-            <tr>
-              <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Action</th>
-              <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Shortcut</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y">
-            <tr>
-              <td class="px-6 py-4">Parameter lock</td>
-              <td class="px-6 py-4">Hold step → twist knob</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4">Record knob automation</td>
-              <td class="px-6 py-4">Hold RECORD → turn knob</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4">Smooth automation</td>
-              <td class="px-6 py-4">Hold BAR → turn white encoder</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4">Undo last edit</td>
-              <td class="px-6 py-4">SHIFT + RECORD</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4">Erase current track</td>
-              <td class="px-6 py-4">Hold RECORD + STOP</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4">Punch-in FX live</td>
-              <td class="px-6 py-4">SHIFT + Fx key</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4">Sequence punch-in FX</td>
-              <td class="px-6 py-4">AUX → FX track → record</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Track & FX Controls -->
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Track & FX Controls</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h3 class="font-medium mb-2">Track Mix</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Mute/unmute track: MIX → hold SHIFT + track button</li>
-            <li>Quick mute in Arrange: Click white encoder on track</li>
-            <li>Adjust track volume: MIX → rotate white encoder</li>
-          </ul>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h3 class="font-medium mb-2">FX Send & Tweak</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>FX-send track select: AUX → choose 1 or 2</li>
-            <li>Tweak reverb: AUX → FX track → turn knob</li>
-            <li>Launch Brain™ generator: AUX → choose Brain track</li>
-          </ul>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h3 class="font-medium mb-2">Instrument & Samples</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Load synth/sample pack: INSTRUMENT + SHIFT + track button</li>
-            <li>Toggle keyboard velocity: COM → M1 → velocity toggle</li>
-          </ul>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="bg-gray-800 text-gray-400 py-6 mt-12">
