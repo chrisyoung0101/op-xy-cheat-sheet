@@ -30,37 +30,30 @@
             <tr>
               <td class="px-6 py-4">Add a bar</td>
               <td class="px-6 py-4 flex items-center">
-                <!-- Replace [BAR_ASSET].png with the correct numbered asset -->
-                <img src="assets/bar.JPEG" alt="Bar button placeholder" class="w-24 h-24">
+                <!-- TODO: replace placeholders with asset filenames -->
+                <img src="assets/[BAR_ASSET].png" alt="Bar button" class="w-24 h-24">
                 <span class="mx-2">+</span>
-                <!-- Replace [PLUS_ASSET].png with the correct numbered asset -->
-                <img src="assets/plus.PNG" alt="Plus button placeholder" class="w-24 h-24">
+                <img src="assets/[PLUS_ASSET].png" alt="Plus button" class="w-24 h-24">
               </td>
             </tr>
             <tr>
               <td class="px-6 py-4">Remove a bar</td>
               <td class="px-6 py-4 flex items-center">
-                <!-- Replace [BAR_ASSET].png with the correct numbered asset -->
-                <img src="assets/bar.JPEG" alt="Bar button placeholder" class="w-24 h-24">
+                <img src="assets/[BAR_ASSET].png" alt="Bar button" class="w-24 h-24">
                 <span class="mx-2">+</span>
-                <!-- Replace [MINUS_ASSET].png with the correct numbered asset -->
-                <img src="assets/minus.JPEG" alt="Minus button placeholder" class="w-24 h-24">
+                <img src="assets/[MINUS_ASSET].png" alt="Minus button" class="w-24 h-24">
               </td>
             </tr>
             <tr>
               <td class="px-6 py-4">Duplicate current bar</td>
               <td class="px-6 py-4 flex items-center">
-                <!-- Replace [BAR_ASSET].png with the correct numbered asset -->
-                <img src="assets/bar.JPEG" alt="Bar button placeholder" class="w-24 h-24">
+                <img src="assets/[BAR_ASSET].png" alt="Bar button" class="w-24 h-24">
                 <span class="mx-2">+</span>
-                <!-- Replace [SHIFT_ASSET].png with the correct numbered asset -->
-                <img src="assets/shift.JPEG" alt="Shift button placeholder" class="w-24 h-24">
+                <img src="assets/[SHIFT_ASSET].png" alt="Shift button" class="w-24 h-24">
                 <span class="mx-2">+</span>
-                <!-- Replace [PLUS_ASSET].png with the correct numbered asset -->
-                <img src="assets/plus.PNG" alt="Plus button placeholder" class="w-24 h-24">
+                <img src="assets/[PLUS_ASSET].png" alt="Plus button" class="w-24 h-24">
               </td>
             </tr>
-            <!-- Other pattern rows retain text shortcuts -->
             <tr>
               <td class="px-6 py-4">Set pattern length</td>
               <td class="px-6 py-4">HOLD BAR → rotate white encoder</td>
@@ -86,15 +79,56 @@
       </div>
     </section>
 
-    <!-- (Remaining sections unchanged) -->
-    <!-- ...Step Editing, Recording & Automation, Track & FX Controls... -->
+    <!-- Step Editing -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Step Editing</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="font-medium mb-2">Basic Step Actions</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>
+              Copy/Paste a step: 
+              <span class="flex items-center">
+                <!-- placeholder for HOLD step image -->
+                <img src="assets/[HOLD_STEP_ASSET].png" alt="Hold step" class="w-24 h-24">
+                <span class="mx-2">→ TAP</span>
+                <!-- placeholder for TAP image -->
+                <img src="assets/[TAP_ASSET].png" alt="Tap" class="w-24 h-24">
+              </span>
+            </li>
+            <li>Nudge a step off-grid: Hold step → press L or R</li>
+            <li>Tie/extend note: Hold start & end steps → press SHIFT</li>
+            <li>Add step component: Hold step + component key</li>
+          </ul>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="font-medium mb-2">Pattern Controls</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Set pattern length: HOLD BAR → SELECT desired last step → RELEASE</li>
+            <li>Step-record mode: Hold RECORD → enter steps</li>
+            <li>Live record mode: RECORD + PLAY → perform steps</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  </main>
-
-  <footer class="bg-gray-800 text-gray-400 py-6 mt-12">
-    <div class="container mx-auto px-4 text-center text-sm">
-      &copy; 2025 OP-XY Cheat Sheet • Built with ❤️ and Tailwind CSS
-    </div>
-  </footer>
-</body>
-</html>
+    <!-- Recording & Automation -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Recording & Automation</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow">
+          <thead class="bg-gray-100 border-b">
+            <tr>
+              <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Action</th>
+              <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Shortcut</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr>
+              <td class="px-6 py-4">Parameter lock</td>
+              <td class="px-6 py-4 flex items-center">
+                Hold step → twist knob
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4">Record knob automation</
