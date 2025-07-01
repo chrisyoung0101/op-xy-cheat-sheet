@@ -17,7 +17,7 @@
   <main class="container mx-auto px-4 py-8 space-y-12">
     <!-- Sequencing & Arrangement -->
     <section>
-      <h2 class="text-xl font-semibold mb-3">🎛️ Sequencing & Arrangement (40%)</h2>
+      <h2 class="text-2xl font-semibold mb-4">🎛️ Sequencing & Arrangement (40%)</h2>
       <table class="w-full table-auto table-fixed bg-white rounded-lg shadow overflow-hidden">
         <thead class="bg-gray-100 border-b">
           <tr>
@@ -29,55 +29,313 @@
           <tr>
             <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Add a bar</td>
             <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              <img src="assets/bar.JPEG" alt="Bar" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/bar.JPEG" alt="Bar button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
               <span class="mx-1">+</span>
-              <img src="assets/plus.PNG" alt="Plus" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/plus.PNG" alt="Plus button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
             </td>
           </tr>
           <tr>
             <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Remove a bar</td>
             <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              <img src="assets/bar.JPEG" alt="Bar" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
-              <span class="mx-1">–</span>
-              <img src="assets/minus.JPEG" alt="Minus" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/bar.JPEG" alt="Bar button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">+</span>
+              <img src="assets/minus.JPEG" alt="Minus button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
             </td>
           </tr>
           <tr>
             <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Duplicate current bar</td>
             <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              <img src="assets/bar.JPEG" alt="Bar" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/bar.JPEG" alt="Bar button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
               <span class="mx-1">+</span>
-              <img src="assets/shift.JPEG" alt="Shift" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/shift.JPEG" alt="Shift button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
               <span class="mx-1">+</span>
-              <img src="assets/plus.PNG" alt="Plus" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/plus.PNG" alt="Plus button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
             </td>
           </tr>
           <tr>
             <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Set pattern length</td>
             <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              <img src="assets/bar.JPEG" alt="Hold BAR" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
-              <span class="mx-1">hold → tap step</span>
-              <img src="assets/white-step.JPEG" alt="Step" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/bar.JPEG" alt="Bar button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">hold → tap desired last step</span>
+              <img src="assets/white-step.JPEG" alt="Bar button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
             </td>
           </tr>
           <tr>
             <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Copy/paste a step</td>
             <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              <img src="assets/step-dark-gray.JPEG" alt="Source step" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
-              <span class="mx-1">→ tap destination</span>
-              <img src="assets/white-step.JPEG" alt="Dest step" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">→</span>
+              <span class="ml-1">destination</span>
+              <img src="assets/white-step.JPEG" alt="Tap button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
             </td>
           </tr>
           <tr>
             <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Nudge a step off-grid</td>
             <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              <img src="assets/step-dark-gray.JPEG" alt="Step" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
               <span class="mx-1">+</span>
-              <img src="assets/minus.JPEG" alt="Minus" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/minus.JPEG" alt="Minus button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
               <span class="mx-1">or</span>
-              <img src="assets/plus.PNG" alt="Plus" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/plus.PNG" alt="Plus button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
             </td>
           </tr>
           <tr>
             <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Tie/extend a note</td>
             <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">+</span>
+              <img src="assets/white-step.JPEG" alt="Step button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Add Step Component</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">+</span>
+              <img src="assets/random-component.JPEG" alt="Component key" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Create new pattern</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">→</span>
+              <img src="assets/m1.JPEG" alt="M1 button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Copy/paste pattern</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">→</span>
+              <img src="assets/m2.JPEG" alt="M2 button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">move,</span>
+              <img src="assets/m3.JPEG" alt="M3 button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Delete pattern</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">→</span>
+              <img src="assets/m4.JPEG" alt="M4 button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Scroll through patterns</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">turn white encoder</span>
+              <img src="assets/white-encoder.JPEG" alt="white encoder" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Performance & Recording -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🎹 Performance & Recording (30%)</h2>
+      <table class="w-full table-auto table-fixed bg-white rounded-lg shadow overflow-hidden">
+        <thead class="bg-gray-100 border-b">
+          <tr>
+            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Action</th>
+            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Shortcut</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Step-record mode</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/record.JPEG" alt="Record button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">enter steps</span>
+              <img src="assets/white-encoder.JPEG" alt="white encoder" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <img src="assets/encoder-dark-gray.JPEG" alt="white encoder" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Live record mode</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/record.JPEG" alt="Record button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">+</span>
+              <img src="assets/play.JPEG" alt="Play button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">perform</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Parameter lock</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <span class="mx-1">hold target step</span>
+              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">twist a knob - whichever</span>
+              <img src="assets/white-encoder.JPEG" alt="white encoder" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Record knob automation</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/record.JPEG" alt="Record button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">turn knob</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Smooth automation</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/bar.JPEG" alt="Bar button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">turn white encoder</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Undo last edit</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/shift.JPEG" alt="Shift button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">+</span>
+              <img src="assets/record.JPEG" alt="Record button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Erase current track</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/record.JPEG" alt="Record button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">+</span>
+              <img src="assets/stop.JPEG" alt="Stop button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Punch-in FX live</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/shift.JPEG" alt="Shift button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">+</span>
+              <img src="assets/track-7.JPEG" alt="FX key" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Sequence Punch-in FX</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">→ FX track,</span>
+              <img src="assets/track-7.JPEG" alt="Record button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Mute/unmute track</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/mixer.JPEG" alt="Mix button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">+</span>
+              <img src="assets/shift.JPEG" alt="Shift button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">+</span>
+              <img src="assets/track-3.JPEG" alt="Track button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Quick mute in Arrange</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <span class="mx-1">Click the white knob to mute the selected track</span>
+              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Sound Design & Mixing -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🎧 Sound Design & Mixing (20%)</h2>
+      <table class="w-full table-auto table-fixed bg-white rounded-lg shadow overflow-hidden">
+        <thead class="bg-gray-100 border-b">
+          <tr>
+            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Action</th>
+            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Shortcut</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Load synth/sample pack</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/instrument.JPEG" alt="Instrument button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">+</span>
+              <img src="assets/shift.JPEG" alt="Shift button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">+</span>
+              <img src="assets/track-2.JPEG" alt="Track button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Adjust track volume</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/mixer.JPEG" alt="Mix button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">white encoder</span>
+              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">FX-send track select</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">In Auxiliary mode, press the track button for FX I (track 7) or FX II (track 8).</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Tweak reverb</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">FX track, turn knob</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Launch Brain™ generator</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">choose Brain track</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Toggle keyboard velocity</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/com.JPEG" alt="Com command button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">→</span>
+              <img src="assets/m1.JPEG" alt="M1 button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">→ Velocity toggle</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- System & Setup -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">⚙️ System & Setup (10%)</h2>
+      <table class="w-full table-auto table-fixed bg-white rounded-lg shadow overflow-hidden">
+        <thead class="bg-gray-100 border-b">
+          <tr>
+            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Action</th>
+            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Shortcut</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Firmware update / factory reset</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/com.JPEG" alt="Com button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">hold during power-on</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base">Keyboard settings menu</td>
+            <td class="px-3 py-2 flex flex-wrap items-center break-words text-sm sm:px-6 sm:py-4 sm:text-base">
+              <img src="assets/com.JPEG" alt="Com button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+              <span class="mx-1">→</span>
+              <img src="assets/m1.JPEG" alt="M1 button" class="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-gray-400 py-6 mt-12">
+    <div class="container mx-auto px-4 text-center text-sm">
+      &copy; 2025 OP-XY Cheat Sheet
+    </div>
+  </footer>
+</body>
+</html>
