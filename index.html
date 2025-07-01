@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +15,10 @@
     </div>
   </header>
 
-  <main class="container mx-auto px-4 py-8 space-y-12">
+  <main class="container mx-auto flex flex-col items-center px-4 py-8 space-y-12">
 
     <!-- Sequencing & Arrangement -->
-    <section>
+    <section class="w-full max-w-xl">
       <h2 class="text-2xl font-semibold mb-4">🎛️ Sequencing & Arrangement (40%)</h2>
       <table class="w-full table-auto bg-white rounded-lg shadow overflow-hidden">
         <thead class="bg-gray-100 border-b">
@@ -28,7 +28,7 @@
           </tr>
         </thead>
         <tbody class="divide-y">
-          <!-- Add a bar -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Add a bar
@@ -41,7 +41,7 @@
               </div>
             </td>
           </tr>
-          <!-- Remove a bar -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Remove a bar
@@ -54,7 +54,7 @@
               </div>
             </td>
           </tr>
-          <!-- Duplicate current bar -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Duplicate current bar
@@ -69,7 +69,7 @@
               </div>
             </td>
           </tr>
-          <!-- Set pattern length -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Set pattern length
@@ -82,7 +82,7 @@
               </div>
             </td>
           </tr>
-          <!-- Copy/paste a step -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Copy/paste a step
@@ -95,7 +95,7 @@
               </div>
             </td>
           </tr>
-          <!-- Check Notes on a Step -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Check Notes on a Step
@@ -107,7 +107,7 @@
               </div>
             </td>
           </tr>
-          <!-- Nudge a step off-grid -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Nudge a step off-grid
@@ -122,7 +122,7 @@
               </div>
             </td>
           </tr>
-          <!-- Tie/extend a note -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Tie/extend a note
@@ -135,7 +135,7 @@
               </div>
             </td>
           </tr>
-          <!-- Add Step Component -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Add Step Component
@@ -148,7 +148,7 @@
               </div>
             </td>
           </tr>
-          <!-- Create new pattern -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Create new pattern
@@ -161,7 +161,7 @@
               </div>
             </td>
           </tr>
-          <!-- Copy/paste pattern -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Copy/paste pattern
@@ -176,7 +176,7 @@
               </div>
             </td>
           </tr>
-          <!-- Delete pattern -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Delete pattern
@@ -189,7 +189,7 @@
               </div>
             </td>
           </tr>
-          <!-- Scroll through patterns -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Scroll through patterns
@@ -202,12 +202,13 @@
               </div>
             </td>
           </tr>
+
         </tbody>
       </table>
     </section>
 
     <!-- Performance & Recording -->
-    <section>
+    <section class="w-full max-w-xl">
       <h2 class="text-2xl font-semibold mb-4">🎹 Performance & Recording (30%)</h2>
       <table class="w-full table-auto bg-white rounded-lg shadow overflow-hidden">
         <thead class="bg-gray-100 border-b">
@@ -217,11 +218,9 @@
           </tr>
         </thead>
         <tbody class="divide-y">
-          <!-- Step-record mode -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Step-record mode
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Step-record mode</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/record.JPEG" alt="Record button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -231,11 +230,9 @@
               </div>
             </td>
           </tr>
-          <!-- Live record mode -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Live record mode
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Live record mode</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/record.JPEG" alt="Record button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -245,11 +242,9 @@
               </div>
             </td>
           </tr>
-          <!-- Parameter lock -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Parameter lock
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Parameter lock</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <span class="text-base sm:text-lg">hold target step</span>
@@ -259,11 +254,9 @@
               </div>
             </td>
           </tr>
-          <!-- Record knob automation -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Record knob automation
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Record knob automation</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/record.JPEG" alt="Record button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -271,11 +264,9 @@
               </div>
             </td>
           </tr>
-          <!-- Smooth automation -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Smooth automation
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Smooth automation</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/bar.JPEG" alt="Bar button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -283,11 +274,9 @@
               </div>
             </td>
           </tr>
-          <!-- Undo last edit -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Undo last edit
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Undo last edit</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/shift.JPEG" alt="Shift button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -296,11 +285,9 @@
               </div>
             </td>
           </tr>
-          <!-- Erase current track -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Erase current track
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Erase current track</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/record.JPEG" alt="Record button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -309,11 +296,9 @@
               </div>
             </td>
           </tr>
-          <!-- Punch-in FX live -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Punch-in FX live
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Punch-in FX live</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/shift.JPEG" alt="Shift button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -322,11 +307,9 @@
               </div>
             </td>
           </tr>
-          <!-- Sequence Punch-in FX -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Sequence Punch-in FX
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Sequence Punch-in FX</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -335,11 +318,9 @@
               </div>
             </td>
           </tr>
-          <!-- Mute/unmute track -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Mute/unmute track
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Mute/unmute track</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/mixer.JPEG" alt="Mix button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -350,11 +331,9 @@
               </div>
             </td>
           </tr>
-          <!-- Quick mute in Arrange -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Quick mute in Arrange
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Quick mute in Arrange</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <span class="text-base sm:text-lg">Click the white knob to mute the selected track</span>
@@ -362,12 +341,13 @@
               </div>
             </td>
           </tr>
+
         </tbody>
       </table>
     </section>
 
     <!-- Sound Design & Mixing -->
-    <section>
+    <section class="w-full max-w-xl">
       <h2 class="text-2xl font-semibold mb-4">🎧 Sound Design & Mixing (20%)</h2>
       <table class="w-full table-auto bg-white rounded-lg shadow overflow-hidden">
         <thead class="bg-gray-100 border-b">
@@ -377,11 +357,9 @@
           </tr>
         </thead>
         <tbody class="divide-y">
-          <!-- Load synth/sample pack -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Load synth/sample pack
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Load synth/sample pack</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/instrument.JPEG" alt="Instrument button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -392,11 +370,9 @@
               </div>
             </td>
           </tr>
-          <!-- Adjust track volume -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Adjust track volume
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Adjust track volume</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/mixer.JPEG" alt="Mix button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -405,25 +381,19 @@
               </div>
             </td>
           </tr>
-          <!-- FX-send track select -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              FX-send track select
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">FX-send track select</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">
-                  In Auxiliary mode, press the track button for FX I (track 7) or FX II (track 8).
-                </span>
+                <span class="text-base sm:text-lg">In Auxiliary mode, press the track button for FX I (track 7) or FX II (track 8).</span>
               </div>
             </td>
           </tr>
-          <!-- Tweak reverb -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Tweak reverb
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Tweak reverb</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -431,11 +401,9 @@
               </div>
             </td>
           </tr>
-          <!-- Launch Brain™ generator -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Launch Brain™ generator
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Launch Brain™ generator</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -443,11 +411,9 @@
               </div>
             </td>
           </tr>
-          <!-- Toggle keyboard velocity -->
+
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
-              Toggle keyboard velocity
-            </td>
+            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Toggle keyboard velocity</td>
             <td class="px-3 py-2 whitespace-nowrap">
               <div class="inline-flex items-center space-x-2">
                 <img src="assets/com.JPEG" alt="Com button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
@@ -457,12 +423,13 @@
               </div>
             </td>
           </tr>
+
         </tbody>
       </table>
     </section>
 
     <!-- System & Setup -->
-    <section>
+    <section class="w-full max-w-xl">
       <h2 class="text-2xl font-semibold mb-4">⚙️ System & Setup (10%)</h2>
       <table class="w-full table-auto bg-white rounded-lg shadow overflow-hidden">
         <thead class="bg-gray-100 border-b">
@@ -472,7 +439,7 @@
           </tr>
         </thead>
         <tbody class="divide-y">
-          <!-- Firmware update / factory reset -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Firmware update / factory reset
@@ -484,7 +451,7 @@
               </div>
             </td>
           </tr>
-          <!-- Keyboard settings menu -->
+
           <tr>
             <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">
               Keyboard settings menu
@@ -497,6 +464,7 @@
               </div>
             </td>
           </tr>
+
         </tbody>
       </table>
     </section>
@@ -510,4 +478,4 @@
   </footer>
 </body>
 </html>
-
+```
