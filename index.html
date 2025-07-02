@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OP-XY Cheat Sheet</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* wrap text at whole-word boundaries once it reaches ~18 characters */
+    .text-limit {
+      display: inline-block;
+      max-width: 18ch;
+      white-space: normal;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
   <header class="bg-gray-800 text-white py-6 shadow">
@@ -14,430 +22,357 @@
     </div>
   </header>
 
-  <main class="container mx-auto flex flex-col items-center px-4 py-8 space-y-12">
-
+  <main class="container mx-auto px-4 py-8 space-y-12">
     <!-- Sequencing & Arrangement -->
-    <section class="w-full max-w-xl">
-      <h2 class="text-2xl font-semibold mb-4">🎛️ Sequencing & Arrangement (40%)</h2>
-      <table class="w-full table-auto bg-white rounded-lg shadow overflow-hidden">
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🎛️ Sequencing &amp; Arrangement (40%)</h2>
+      <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
+        <colgroup>
+          <col class="w-1/3">
+          <col class="w-2/3">
+        </colgroup>
         <thead class="bg-gray-100 border-b">
           <tr>
-            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Action</th>
-            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Shortcut</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
           </tr>
         </thead>
         <tbody class="divide-y">
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Add a bar</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/bar.JPEG" alt="Bar button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/plus.PNG" alt="Plus button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Add a bar</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/plus.PNG" alt="Plus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Remove a bar</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/bar.JPEG" alt="Bar button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/minus.JPEG" alt="Minus button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Remove a bar</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/minus.JPEG" alt="Minus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Duplicate current bar</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/bar.JPEG" alt="Bar button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/shift.JPEG" alt="Shift button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/plus.PNG" alt="Plus button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Duplicate current bar</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/plus.PNG" alt="Plus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Set pattern length</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/bar.JPEG" alt="Bar button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">hold → tap last step</span>
-                <img src="assets/white-step.JPEG" alt="White step" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Set pattern length</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">hold → tap desired</span>
+              <span class="text-limit">last step</span>
+              <img src="assets/white-step.JPEG" alt="White step" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Copy/paste a step</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">→ destination</span>
-                <img src="assets/white-step.JPEG" alt="White step" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Copy/paste a step</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">→</span>
+              <span class="mx-1 text-limit">destination</span>
+              <img src="assets/white-step.JPEG" alt="White step" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Check Notes on a Step</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">Press &amp; Hold Step</span>
-                <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Nudge a step off-grid</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/minus.JPEG" alt="Minus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">or</span>
+              <img src="assets/plus.PNG" alt="Plus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Nudge a step off-grid</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/minus.JPEG" alt="Minus button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">or</span>
-                <img src="assets/plus.PNG" alt="Plus button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Tie/extend a note</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/white-step.JPEG" alt="White step" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Tie/extend a note</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/white-step.JPEG" alt="White step" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Add Step Component</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/random-component.JPEG" alt="Component key" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Add Step Component</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/random-component.JPEG" alt="Component key" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Create new pattern</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">→</span>
+              <img src="assets/m1.JPEG" alt="M1 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Create new pattern</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/arrange.JPEG" alt="Arrange button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">→</span>
-                <img src="assets/m1.JPEG" alt="M1 button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Copy/paste pattern</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">→</span>
+              <img src="assets/m2.JPEG" alt="M2 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">move,</span>
+              <img src="assets/m3.JPEG" alt="M3 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Copy/paste pattern</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/arrange.JPEG" alt="Arrange button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">→</span>
-                <img src="assets/m2.JPEG" alt="M2 button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">move,</span>
-                <img src="assets/m3.JPEG" alt="M3 button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Delete pattern</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">→</span>
+              <img src="assets/m4.JPEG" alt="M4 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Delete pattern</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/arrange.JPEG" alt="Arrange button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">→</span>
-                <img src="assets/m4.JPEG" alt="M4 button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Scroll through patterns</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">turn white encoder</span>
+              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
-          <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Scroll through patterns</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/arrange.JPEG" alt="Arrange button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">turn white encoder</span>
-                <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
-            </td>
-          </tr>
-
         </tbody>
       </table>
     </section>
 
     <!-- Performance & Recording -->
-    <section class="w-full max-w-xl">
-      <h2 class="text-2xl font-semibold mb-4">🎹 Performance & Recording (30%)</h2>
-      <table class="w-full table-auto bg-white rounded-lg shadow overflow-hidden">
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🎹 Performance &amp; Recording (30%)</h2>
+      <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
+        <colgroup>
+          <col class="w-1/3">
+          <col class="w-2/3">
+        </colgroup>
         <thead class="bg-gray-100 border-b">
           <tr>
-            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Action</th>
-            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Shortcut</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
           </tr>
         </thead>
         <tbody class="divide-y">
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Step-record mode</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/record.JPEG" alt="Record button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">enter steps</span>
-                <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <img src="assets/encoder-dark-gray.JPEG" alt="Dark-gray encoder" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Step-record mode</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">enter steps</span>
+              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <img src="assets/encoder-dark-gray.JPEG" alt="Encoder dark" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Live record mode</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/record.JPEG" alt="Record button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/play.JPEG" alt="Play button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">perform</span>
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Live record mode</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/play.JPEG" alt="Play button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">perform</span>
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Parameter lock</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">hold target step</span>
-                <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">twist knob</span>
-                <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Parameter lock</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <span class="mx-1 text-limit">hold target step</span>
+              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">twist a knob –</span>
+              <span class="text-limit">whichever</span>
+              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Record knob automation</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/record.JPEG" alt="Record button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">turn knob</span>
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Record knob automation</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">turn knob</span>
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Smooth automation</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/bar.JPEG" alt="Bar button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">turn encoder</span>
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Smooth automation</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">turn white encoder</span>
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Undo last edit</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/shift.JPEG" alt="Shift button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/record.JPEG" alt="Record button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Undo last edit</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Erase current track</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/record.JPEG" alt="Record button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/stop.JPEG" alt="Stop button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Erase current track</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/stop.JPEG" alt="Stop button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Punch-in FX live</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/shift.JPEG" alt="Shift button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/track-7.JPEG" alt="FX key" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Punch-in FX live</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/track-7.JPEG" alt="FX key" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Sequence Punch-in FX</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">→ FX track</span>
-                <img src="assets/track-7.JPEG" alt="FX key" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Sequence Punch-in FX</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">→ FX track,</span>
+              <img src="assets/track-7.JPEG" alt="FX key" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Mute/unmute track</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/mixer.JPEG" alt="Mix button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/shift.JPEG" alt="Shift button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/track-3.JPEG" alt="Track button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Mute/unmute track</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/mixer.JPEG" alt="Mixer button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/track-3.JPEG" alt="Track button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Quick mute in Arrange</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">click white knob</span>
-                <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Quick mute in Arrange</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <span class="mx-1 text-limit">Click the white knob to mute</span>
+              <span class="text-limit">the selected track</span>
+              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
         </tbody>
       </table>
     </section>
 
     <!-- Sound Design & Mixing -->
-    <section class="w-full max-w-xl">
-      <h2 class="text-2xl font-semibold mb-4">🎧 Sound Design & Mixing (20%)</h2>
-      <table class="w-full table-auto bg-white rounded-lg shadow overflow-hidden">
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🎧 Sound Design &amp; Mixing (20%)</h2>
+      <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
+        <colgroup>
+          <col class="w-1/3">
+          <col class="w-2/3">
+        </colgroup>
         <thead class="bg-gray-100 border-b">
           <tr>
-            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Action</th>
-            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Shortcut</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
           </tr>
         </thead>
         <tbody class="divide-y">
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Load synth/sample pack</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/instrument.JPEG" alt="Instrument button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/shift.JPEG" alt="Shift button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">+</span>
-                <img src="assets/track-2.JPEG" alt="Track button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Load synth/sample pack</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/instrument.JPEG" alt="Instrument button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">+</span>
+              <img src="assets/track-2.JPEG" alt="Track button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Adjust track volume</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/mixer.JPEG" alt="Mix button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">white encoder</span>
-                <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Adjust track volume</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/mixer.JPEG" alt="Mixer button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">white encoder</span>
+              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">FX-send track select</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">choose FX I/II</span>
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">FX-send track select</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">In Auxiliary mode, press</span>
+              <span class="text-limit">the track button for FX I</span>
+              <span class="text-limit">(track 7) or FX II</span>
+              <span class="text-limit">(track 8). Press M2 to</span>
+              <span class="text-limit">view the routing module.</span>
+              <span class="text-limit">Click any encoder to</span>
+              <span class="text-limit">switch between</span>
+              <span class="text-limit">instrument tracks 1–4</span>
+              <span class="text-limit">and 5–8, toggling</span>
+              <span class="text-limit">each on or off for</span>
+              <span class="text-limit">this FX send.</span>
+              <span class="text-limit">When you’ve selected</span>
+              <span class="text-limit">the desired tracks,</span>
+              <span class="text-limit">the FX send will</span>
+              <span class="text-limit">automatically apply</span>
+              <span class="text-limit">to those tracks</span>
+              <span class="text-limit">during playback.</span>
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Tweak reverb</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">turn knob</span>
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Tweak reverb</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">FX track, turn knob</span>
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Launch Brain™ generator</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">choose Brain track</span>
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Launch Brain™ generator</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">choose Brain track</span>
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Toggle keyboard velocity</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/com.JPEG" alt="Com command button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">→</span>
-                <img src="assets/m1.JPEG" alt="M1 button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">Velocity</span>
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Toggle keyboard velocity</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">→</span>
+              <img src="assets/m1.JPEG" alt="M1 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">→ Velocity toggle</span>
             </td>
           </tr>
-
         </tbody>
       </table>
     </section>
 
     <!-- System & Setup -->
-    <section class="w-full max-w-xl">
-      <h2 class="text-2xl font-semibold mb-4">⚙️ System & Setup (10%)</h2>
-      <table class="w-full table-auto bg-white rounded-lg shadow overflow-hidden">
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">⚙️ System &amp; Setup (10%)</h2>
+      <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
+        <colgroup>
+          <col class="w-1/3">
+          <col class="w-2/3">
+        </colgroup>
         <thead class="bg-gray-100 border-b">
           <tr>
-            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Action</th>
-            <th class="px-3 py-2 text-left text-xs sm:px-6 sm:py-3 sm:text-sm">Shortcut</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
           </tr>
         </thead>
         <tbody class="divide-y">
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Firmware update / factory reset</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/com.JPEG" alt="Com button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="inline-block max-w-[18ch] truncate text-base sm:text-lg">hold during power</span>
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Firmware update / factory reset</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">hold during power-on</span>
             </td>
           </tr>
-
           <tr>
-            <td class="px-3 py-2 break-words text-sm sm:px-6 sm:py-4 sm:text-base">Keyboard settings menu</td>
-            <td class="px-3 py-2 whitespace-nowrap">
-              <div class="inline-flex items-center space-x-2">
-                <img src="assets/com.JPEG" alt="Com button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-                <span class="text-base sm:text-lg">→</span>
-                <img src="assets/m1.JPEG" alt="M1 button" class="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-              </div>
+            <td class="px-4 py-2"><span class="text-limit">Keyboard settings menu</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">→</span>
+              <img src="assets/m1.JPEG" alt="M1 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-
         </tbody>
       </table>
     </section>
-
   </main>
 
   <footer class="bg-gray-800 text-gray-400 py-6 mt-12">
