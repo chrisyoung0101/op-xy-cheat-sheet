@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OP-XY Cheat Sheet</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -11,12 +11,12 @@
       --nav-height: 4rem;
     }
 
-    /* ensure anchored sections clear the sticky header */
+    /* leave room for the header whenever you jump to an ID */
     section[id] {
       scroll-margin-top: var(--nav-height);
     }
 
-    /* wrap text at whole-word boundaries once it reaches ~18 characters */
+    /* wrap shortcut text at ~18 chars */
     .text-limit {
       display: inline-block;
       max-width: 18ch;
@@ -24,6 +24,7 @@
     }
   </style>
 </head>
+
 
 
 <body class="bg-gray-50 text-gray-900">
