@@ -5,25 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OP-XY Cheat Sheet</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root {
-      /* height of your sticky header */
-      --nav-height: 4rem;
-    }
+<style>
+  :root {
+    /* height of your sticky header */
+    --nav-height: 4rem;
+  }
 
-    /* ensure any in-page jump leaves room for the header */
-    html {
-      scroll-padding-top: var(--nav-height);
-      scroll-behavior: smooth; /* optional, but gives smooth anchor scroll */
-    }
+  /* 1) Give every section a hidden pseudo-element above it equal to nav height */
+  section[id] {
+    position: relative;
+  }
+  section[id]::before {
+    content: "";
+    display: block;
+    height: var(--nav-height);
+    margin-top: calc(-1 * var(--nav-height));
+    visibility: hidden;
+  }
 
-    /* wrap shortcut text at ~18 chars */
-    .text-limit {
-      display: inline-block;
-      max-width: 18ch;
-      white-space: normal;
-    }
-  </style>
+  /* 2) Optional: smooth scrolling on anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* wrap shortcut text at ~18 characters */
+  .text-limit {
+    display: inline-block;
+    max-width: 18ch;
+    white-space: normal;
+  }
+</style>
+
 </head>
 
 
