@@ -15,12 +15,23 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
-  <header class="bg-gray-800 text-white py-6 shadow">
-    <div class="container mx-auto px-4">
+<!-- 1) Replace your <header>…</header> with this version: -->
+<header class="bg-gray-800 text-white py-6 shadow">
+  <div class="container mx-auto px-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+    <div>
       <h1 class="text-3xl font-bold">Teenage Engineering OP-XY Cheat Sheet</h1>
       <p class="mt-1 text-gray-300">Quick reference guide for core actions</p>
     </div>
-  </header>
+    <div class="mt-4 sm:mt-0">
+      <input
+        id="searchBox"
+        type="text"
+        placeholder="Search…"
+        class="w-full sm:w-64 px-3 py-2 rounded border border-gray-300 focus:outline-none focus:ring"
+      />
+    </div>
+  </div>
+</header>
 
   <main class="container mx-auto px-4 py-8 space-y-12">
     <!-- Sequencing & Arrangement -->
@@ -715,5 +726,28 @@
       &copy; 2025 OP-XY Cheat Sheet
     </div>
   </footer>
+
+<!-- 2) At the very end of your <body>, just before </body>, add: -->
+<script>
+  (function(){
+    const searchInput = document.getElementById('searchBox');
+    searchInput.addEventListener('input', function(){
+      const q = this.value.toLowerCase();
+
+      // filter cheat‐sheet rows
+      document.querySelectorAll('table tbody tr').forEach(row => {
+        row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+
+      // filter asset cards
+      document.querySelectorAll('.asset-card').forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+    });
+  })();
+</script>
+
+
+
 </body>
 </html>
