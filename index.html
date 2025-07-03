@@ -6,6 +6,16 @@
   <title>OP-XY Cheat Sheet</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    :root {
+      /* height of your sticky header */
+      --nav-height: 4rem;
+    }
+
+    /* ensure anchored sections clear the sticky header */
+    section[id] {
+      scroll-margin-top: var(--nav-height);
+    }
+
     /* wrap text at whole-word boundaries once it reaches ~18 characters */
     .text-limit {
       display: inline-block;
@@ -14,6 +24,7 @@
     }
   </style>
 </head>
+
 
 <body class="bg-gray-50 text-gray-900">
 <header class="sticky top-0 z-50 bg-gray-800 text-white py-6 shadow">
