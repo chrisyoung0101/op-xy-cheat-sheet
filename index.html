@@ -741,7 +741,7 @@
   const searchInput   = document.getElementById('searchBox');
   const suggestionBox = document.getElementById('suggestionBox');
 
-  // collect all searchable rows and cards
+  // gather all searchable items
   const items = [];
   document.querySelectorAll('.sheet-row').forEach(r => items.push({ text: r.textContent.trim(), el: r }));
   document.querySelectorAll('.asset-card').forEach(c => items.push({ text: c.textContent.trim(), el: c }));
@@ -751,7 +751,6 @@
     suggestionBox.innerHTML = '';
     if (!q) return suggestionBox.classList.add('hidden');
 
-    // find up to 10 matches
     const matches = items.filter(i => i.text.toLowerCase().includes(q)).slice(0,10);
     if (!matches.length) return suggestionBox.classList.add('hidden');
 
@@ -762,15 +761,17 @@
       li.className   = 'px-3 py-2 hover:bg-gray-200 cursor-pointer text-gray-900';
       suggestionBox.appendChild(li);
     });
-
     suggestionBox.classList.remove('hidden');
   });
 
   suggestionBox.addEventListener('click', e => {
     if (e.target.tagName !== 'LI') return;
-    const idx = Number(e.target.dataset.idx);
+    const idx   = Number(e.target.dataset.idx);
     const match = items.filter(i => i.text.toLowerCase().includes(searchInput.value.trim().toLowerCase()))[idx];
-    if (match) match.el.scrollIntoView({ behavior:'smooth', block:'center' });
+    if (match) {
+      // scroll so the matched element is at the top of the viewport
+      match.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     suggestionBox.classList.add('hidden');
     searchInput.value = '';
   });
@@ -782,6 +783,7 @@
   });
 })();
 </script>
+
 
 
 
