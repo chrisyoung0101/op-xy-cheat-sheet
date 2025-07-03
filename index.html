@@ -748,6 +748,17 @@
   document.querySelectorAll('.sheet-row').forEach(r => items.push({ text: r.textContent.trim(), el: r }));
   document.querySelectorAll('.asset-card').forEach(c => items.push({ text: c.textContent.trim(), el: c }));
 
+  function scrollToElement(el) {
+    const header = document.querySelector('header');
+    const headerHeight = header.offsetHeight;
+    const rect = el.getBoundingClientRect();
+    const absoluteY = window.pageYOffset + rect.top;
+    window.scrollTo({
+      top: absoluteY - headerHeight,
+      behavior: 'smooth'
+    });
+  }
+
   searchInput.addEventListener('input', function(){
     const q = this.value.trim().toLowerCase();
     suggestionBox.innerHTML = '';
@@ -769,11 +780,10 @@
   suggestionBox.addEventListener('click', e => {
     if (e.target.tagName !== 'LI') return;
     const idx   = Number(e.target.dataset.idx);
-    const match = items.filter(i => i.text.toLowerCase().includes(searchInput.value.trim().toLowerCase()))[idx];
-    if (match) {
-      // scroll so the matched element is at the top of the viewport
-      match.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const match = items.filter(i =>
+      i.text.toLowerCase().includes(searchInput.value.trim().toLowerCase())
+    )[idx];
+    if (match) scrollToElement(match.el);
     suggestionBox.classList.add('hidden');
     searchInput.value = '';
   });
@@ -785,6 +795,7 @@
   });
 })();
 </script>
+
 
 
 
