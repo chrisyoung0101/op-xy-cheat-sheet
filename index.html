@@ -15,23 +15,28 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
-<!-- 1) Replace your <header>…</header> with this version: -->
 <header class="bg-gray-800 text-white py-6 shadow">
   <div class="container mx-auto px-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
     <div>
       <h1 class="text-3xl font-bold">Teenage Engineering OP-XY Cheat Sheet</h1>
       <p class="mt-1 text-gray-300">Quick reference guide for core actions</p>
     </div>
-    <div class="mt-4 sm:mt-0">
+    <div class="relative mt-4 sm:mt-0">
       <input
         id="searchBox"
         type="text"
         placeholder="Search…"
-        class="w-full sm:w-64 px-3 py-2 rounded border border-gray-300 focus:outline-none focus:ring"
+        class="w-full sm:w-64 px-3 py-2 rounded border border-gray-300 text-gray-900 focus:outline-none focus:ring"
+        autocomplete="off"
       />
+      <ul
+        id="suggestionBox"
+        class="absolute top-full left-0 right-0 z-50 mt-1 bg-white border border-gray-300 rounded max-h-60 overflow-auto hidden"
+      ></ul>
     </div>
   </div>
 </header>
+
 
   <main class="container mx-auto px-4 py-8 space-y-12">
     <!-- Sequencing & Arrangement -->
@@ -43,13 +48,13 @@
           <col class="w-2/3">
         </colgroup>
         <thead class="bg-gray-100 border-b">
-          <tr>
+         <tr class="sheet-row">
             <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
             <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
           </tr>
         </thead>
         <tbody class="divide-y">
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Add a bar</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -57,7 +62,7 @@
               <img src="assets/plus.PNG" alt="Plus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Remove a bar</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -65,7 +70,7 @@
               <img src="assets/minus.JPEG" alt="Minus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Duplicate current bar</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -75,7 +80,7 @@
               <img src="assets/plus.PNG" alt="Plus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Set pattern length</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -84,7 +89,7 @@
               <img src="assets/white-step.JPEG" alt="White step" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Copy/paste a step</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -93,7 +98,7 @@
               <img src="assets/white-step.JPEG" alt="White step" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Nudge a step off-grid</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -103,7 +108,7 @@
               <img src="assets/plus.PNG" alt="Plus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Tie/extend a note</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -111,7 +116,7 @@
               <img src="assets/white-step.JPEG" alt="White step" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Add Step Component</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -119,7 +124,7 @@
               <img src="assets/random-component.JPEG" alt="Component key" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Create new pattern</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -127,7 +132,7 @@
               <img src="assets/m1.JPEG" alt="M1 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Copy/paste pattern</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -137,7 +142,7 @@
               <img src="assets/m3.JPEG" alt="M3 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Delete pattern</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -145,7 +150,7 @@
               <img src="assets/m4.JPEG" alt="M4 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Scroll through patterns</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -166,13 +171,13 @@
           <col class="w-2/3">
         </colgroup>
         <thead class="bg-gray-100 border-b">
-          <tr>
+         <tr class="sheet-row">
             <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
             <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
           </tr>
         </thead>
         <tbody class="divide-y">
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Step-record mode</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -181,7 +186,7 @@
               <img src="assets/encoder-dark-gray.JPEG" alt="Encoder dark" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Live record mode</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -190,7 +195,7 @@
               <span class="mx-1 text-limit">perform</span>
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Parameter lock</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <span class="mx-1 text-limit">hold target step</span>
@@ -200,21 +205,21 @@
               <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Record knob automation</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">turn knob</span>
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Smooth automation</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">turn white encoder</span>
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Undo last edit</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -222,7 +227,7 @@
               <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Erase current track</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -230,7 +235,7 @@
               <img src="assets/stop.JPEG" alt="Stop button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Punch-in FX live</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -238,7 +243,7 @@
               <img src="assets/track-7.JPEG" alt="FX key" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Sequence Punch-in FX</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -246,7 +251,7 @@
               <img src="assets/track-7.JPEG" alt="FX key" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Mute/unmute track</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/mixer.JPEG" alt="Mixer button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -256,7 +261,7 @@
               <img src="assets/track-3.JPEG" alt="Track button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Quick mute in Arrange</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <span class="mx-1 text-limit">Click the white knob to mute</span>
@@ -277,13 +282,13 @@
           <col class="w-2/3">
         </colgroup>
         <thead class="bg-gray-100 border-b">
-          <tr>
+         <tr class="sheet-row">
             <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
             <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
           </tr>
         </thead>
         <tbody class="divide-y">
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Load synth/sample pack</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/instrument.JPEG" alt="Instrument button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -293,7 +298,7 @@
               <img src="assets/track-2.JPEG" alt="Track button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Adjust track volume</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/mixer.JPEG" alt="Mixer button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -301,7 +306,7 @@
               <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">FX-send track select</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -324,21 +329,21 @@
               <span class="text-limit">during playback.</span>
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Tweak reverb</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">FX track, turn knob</span>
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Launch Brain™ generator</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">choose Brain track</span>
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Toggle keyboard velocity</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -360,20 +365,20 @@
           <col class="w-2/3">
         </colgroup>
         <thead class="bg-gray-100 border-b">
-          <tr>
+         <tr class="sheet-row">
             <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
             <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
           </tr>
         </thead>
         <tbody class="divide-y">
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Firmware update / factory reset</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">hold during power-on</span>
             </td>
           </tr>
-          <tr>
+         <tr class="sheet-row">
             <td class="px-4 py-2"><span class="text-limit">Keyboard settings menu</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -395,328 +400,331 @@
   >
 
     <!-- **#1** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/arrange.JPEG" alt="arrange.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">arrange.JPEG</span>
     </div>
     <!-- **#2** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/auxiliary.JPEG" alt="auxiliary.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">auxiliary.JPEG</span>
     </div>
     <!-- **#3** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/bar.JPEG" alt="bar.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">bar.JPEG</span>
     </div>
     <!-- **#4** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/bend-step-component.JPEG" alt="bend-step-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">bend-step-component.JPEG</span>
     </div>
     <!-- **#5** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/click-encoder-example.JPEG" alt="click-encoder-example.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">click-encoder-example.JPEG</span>
     </div>
     <!-- **#6** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/com.JPEG" alt="com.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">com.JPEG</span>
     </div>
     <!-- **#7** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/combo-press-a-button.JPEG" alt="combo-press-a-button.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">combo-press-a-button.JPEG</span>
     </div>
     <!-- **#8** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/copy-a-preset.JPEG" alt="copy-a-preset.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">copy-a-preset.JPEG</span>
     </div>
     <!-- **#9** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/dark-gray-encoder.JPEG" alt="dark-gray-encoder.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">dark-gray-encoder.JPEG</span>
     </div>
     <!-- **#10** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/delete-preset.JPEG" alt="delete-preset.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">delete-preset.JPEG</span>
     </div>
     <!-- **#11** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/hold-component.JPEG" alt="hold-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">hold-component.JPEG</span>
     </div>
     <!-- **#12** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/instrument.JPEG" alt="instrument.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">instrument.JPEG</span>
     </div>
     <!-- **#13** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/isolate-pattern-for-selected-key.JPEG" alt="isolate-pattern-for-selected-key.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">isolate-pattern-for-selected-key.JPEG</span>
     </div>
     <!-- **#14** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/jump-component.JPEG" alt="jump-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">jump-component.JPEG</span>
     </div>
     <!-- **#15** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/light-grey-encoder.JPEG" alt="light-grey-encoder.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">light-grey-encoder.JPEG</span>
     </div>
     <!-- **#16** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/light-grey-step.JPEG" alt="light-grey-step.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">light-grey-step.JPEG</span>
     </div>
     <!-- **#17** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/m1.JPEG" alt="m1.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">m1.JPEG</span>
     </div>
     <!-- **#18** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/m2.JPEG" alt="m2.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">m2.JPEG</span>
     </div>
     <!-- **#19** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/m3.JPEG" alt="m3.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">m3.JPEG</span>
     </div>
     <!-- **#20** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/m4.JPEG" alt="m4.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">m4.JPEG</span>
     </div>
     <!-- **#21** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/metronome.JPEG" alt="metronome.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">metronome.JPEG</span>
     </div>
     <!-- **#22** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/mid-gray-encoder.JPEG" alt="mid-gray-encoder.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">mid-gray-encoder.JPEG</span>
     </div>
     <!-- **#23** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/minus.JPEG" alt="minus.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">minus.JPEG</span>
     </div>
     <!-- **#24** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/mixer.JPEG" alt="mixer.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">mixer.JPEG</span>
     </div>
     <!-- **#25** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/multiply-component.JPEG" alt="multiply-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">multiply-component.JPEG</span>
     </div>
     <!-- **#26** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/note_length-style-glide-stereo.JPEG" alt="note_length-style-glide-stereo.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">note_length-style-glide-stereo.JPEG</span>
     </div>
     <!-- **#27** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/paste-preset.JPEG" alt="paste-preset.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">paste-preset.JPEG</span>
     </div>
     <!-- **#28** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/play.JPEG" alt="play.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">play.JPEG</span>
     </div>
     <!-- **#29** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/players.JPEG" alt="players.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">players.JPEG</span>
     </div>
     <!-- **#30** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/plus.PNG" alt="plus.PNG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">plus.PNG</span>
     </div>
     <!-- **#31** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/portamento-component.JPEG" alt="portamento-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">portamento-component.JPEG</span>
     </div>
     <!-- **#32** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/press-and-hold-a-button.JPEG" alt="press-and-hold-a-button.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">press-and-hold-a-button.JPEG</span>
     </div>
     <!-- **#33** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/projects.JPEG" alt="projects.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">projects.JPEG</span>
     </div>
     <!-- **#34** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/pulse-component.JPEG" alt="pulse-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">pulse-component.JPEG</span>
     </div>
     <!-- **#35** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/ramp-down-step-component.JPEG" alt="ramp-down-step-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">ramp-down-step-component.JPEG</span>
     </div>
     <!-- **#36** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/ramp-up-step-component.JPEG" alt="ramp-up-step-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">ramp-up-step-component.JPEG</span>
     </div>
     <!-- **#37** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/random-component.JPEG" alt="random-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">random-component.JPEG</span>
     </div>
     <!-- **#38** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/record.JPEG" alt="record.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">record.JPEG</span>
     </div>
-    <!-- **#39** -->
-    <div class="flex flex-col items-center">
+        <!-- **#39** -->
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/rename-a-preset.JPEG" alt="rename-a-preset.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">rename-a-preset.JPEG</span>
     </div>
     <!-- **#40** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/rotate-encoder.JPEG" alt="rotate-encoder.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">rotate-encoder.JPEG</span>
     </div>
     <!-- **#41** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/sample.JPEG" alt="sample.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">sample.JPEG</span>
     </div>
     <!-- **#42** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/save-a-preset.JPEG" alt="save-a-preset.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">save-a-preset.JPEG</span>
     </div>
     <!-- **#43** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/scramble-a-track.JPEG" alt="scramble-a-track.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">scramble-a-track.JPEG</span>
     </div>
     <!-- **#44** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/sequence-press-example-2.JPEG" alt="sequence-press-example-2.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">sequence-press-example-2.JPEG</span>
     </div>
     <!-- **#45** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/sequence-press-example.JPEG" alt="sequence-press-example.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">sequence-press-example.JPEG</span>
     </div>
     <!-- **#46** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/shift.JPEG" alt="shift.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">shift.JPEG</span>
     </div>
     <!-- **#47** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/single-press-button.JPEG" alt="single-press-button.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">single-press-button.JPEG</span>
     </div>
     <!-- **#48** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/skip-parameter-lock-step-component-6.JPEG" alt="skip-parameter-lock-step-component-6.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">skip-parameter-lock-step-component-6.JPEG</span>
     </div>
     <!-- **#49** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/skip-step-component.JPEG" alt="skip-step-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">skip-step-component.JPEG</span>
     </div>
     <!-- **#50** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/skip-trigger-component.JPEG" alt="skip-trigger-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">skip-trigger-component.JPEG</span>
     </div>
     <!-- **#51** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/speed-patter-range-hold.JPEG" alt="speed-patter-range-hold.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">speed-patter-range-hold.JPEG</span>
     </div>
     <!-- **#52** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/step-dark-gray.JPEG" alt="step-dark-gray.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">step-dark-gray.JPEG</span>
     </div>
     <!-- **#53** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/stop.JPEG" alt="stop.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">stop.JPEG</span>
     </div>
     <!-- **#54** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/tonality-component.JPEG" alt="tonality-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">tonality-component.JPEG</span>
     </div>
     <!-- **#55** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/track-1.JPEG" alt="track-1.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">track-1.JPEG</span>
     </div>
     <!-- **#56** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/track-2.JPEG" alt="track-2.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">track-2.JPEG</span>
     </div>
     <!-- **#57** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/track-3.JPEG" alt="track-3.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">track-3.JPEG</span>
     </div>
     <!-- **#58** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/track-5.JPEG" alt="track-5.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">track-5.JPEG</span>
     </div>
     <!-- **#59** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/track-6.JPEG" alt="track-6.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">track-6.JPEG</span>
     </div>
     <!-- **#60** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/track-7.JPEG" alt="track-7.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">track-7.JPEG</span>
     </div>
     <!-- **#61** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/track-8.JPEG" alt="track-8.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">track-8.JPEG</span>
     </div>
     <!-- **#62** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/velocity-component.JPEG" alt="velocity-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">velocity-component.JPEG</span>
     </div>
     <!-- **#63** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/white-encoder.JPEG" alt="white-encoder.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">white-encoder.JPEG</span>
     </div>
     <!-- **#64** -->
-    <div class="flex flex-col items-center">
+    <div class="asset-card flex flex-col items-center">
       <img src="assets/white-step.JPEG" alt="white-step.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
       <span class="mt-2 text-xs sm:text-sm break-words text-center">white-step.JPEG</span>
     </div>
 
   </div>
 </section>
+
+
+
 
 
   
@@ -727,25 +735,80 @@
     </div>
   </footer>
 
-<!-- 2) At the very end of your <body>, just before </body>, add: -->
 <script>
-  (function(){
-    const searchInput = document.getElementById('searchBox');
-    searchInput.addEventListener('input', function(){
-      const q = this.value.toLowerCase();
+(function(){
+  const searchInput    = document.getElementById('searchBox');
+  const suggestionBox  = document.getElementById('suggestionBox');
 
-      // filter cheat‐sheet rows
-      document.querySelectorAll('table tbody tr').forEach(row => {
-        row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
-      });
+  // Gather searchable items (text + element)
+  const items = [];
+  document.querySelectorAll('.sheet-row').forEach(row => {
+    const txt = row.textContent.trim();
+    items.push({ text: txt, el: row });
+  });
+  document.querySelectorAll('.asset-card').forEach(card => {
+    const txt = card.textContent.trim();
+    items.push({ text: txt, el: card });
+  });
 
-      // filter asset cards
-      document.querySelectorAll('.asset-card').forEach(card => {
-        card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
-      });
+  // Utility: slugify for scrolling targets (optional)
+  function scrollTo(el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // Build suggestion list
+  searchInput.addEventListener('input', function(){
+    const q = this.value.trim().toLowerCase();
+    suggestionBox.innerHTML = '';
+
+    if (!q) {
+      suggestionBox.classList.add('hidden');
+      return;
+    }
+
+    // filter items
+    const matches = items
+      .filter(item => item.text.toLowerCase().includes(q))
+      .slice(0, 10); // up to 10 suggestions
+
+    if (!matches.length) {
+      suggestionBox.classList.add('hidden');
+      return;
+    }
+
+    // show list
+    matches.forEach((item, idx) => {
+      const li = document.createElement('li');
+      li.textContent = item.text;
+      li.dataset.idx  = idx;
+      li.className    = 'px-3 py-2 hover:bg-gray-200 cursor-pointer';
+      suggestionBox.appendChild(li);
     });
-  })();
+
+    suggestionBox.classList.remove('hidden');
+  });
+
+  // Click on suggestion
+  suggestionBox.addEventListener('click', e => {
+    if (e.target.tagName !== 'LI') return;
+    const idx = Number(e.target.dataset.idx);
+    const match = items.filter(item =>
+      item.text.toLowerCase().includes(searchInput.value.trim().toLowerCase())
+    )[idx];
+    if (match) scrollTo(match.el);
+    suggestionBox.classList.add('hidden');
+    searchInput.value = '';
+  });
+
+  // Click outside or blur hides suggestions
+  document.addEventListener('click', e => {
+    if (!searchInput.contains(e.target) && !suggestionBox.contains(e.target)) {
+      suggestionBox.classList.add('hidden');
+    }
+  });
+})();
 </script>
+
 
 
 
