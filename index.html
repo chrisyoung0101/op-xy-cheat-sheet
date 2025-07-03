@@ -5,37 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OP-XY Cheat Sheet</title>
   <script src="https://cdn.tailwindcss.com"></script>
-<style>
-  :root {
-    /* height of your sticky header */
-    --nav-height: 4rem;
-  }
+  <style>
+    :root {
+      /* must match your header’s total height (padding + line-height etc) */
+      --nav-height: 4rem;
+    }
 
-  /* 1) Give every section a hidden pseudo-element above it equal to nav height */
-  section[id] {
-    position: relative;
-  }
-  section[id]::before {
-    content: "";
-    display: block;
-    height: var(--nav-height);
-    margin-top: calc(-1 * var(--nav-height));
-    visibility: hidden;
-  }
+    /* make your header sticky as before */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
 
-  /* 2) Optional: smooth scrolling on anchor links */
-  html {
-    scroll-behavior: smooth;
-  }
+    /* smooth any scrollIntoView or native anchor jumps */
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* wrap shortcut text at ~18 characters */
-  .text-limit {
-    display: inline-block;
-    max-width: 18ch;
-    white-space: normal;
-  }
-</style>
+    /* modern browsers: ensure any element with an ID will stop below the header */
+    [id] {
+      scroll-margin-top: var(--nav-height);
+    }
 
+    /* fallback hack: insert invisible spacer before each section */
+    section[id] {
+      position: relative;
+    }
+    section[id]::before {
+      content: "";
+      position: absolute;
+      top: calc(-1 * var(--nav-height));
+      height: var(--nav-height);
+      width: 1px;
+      visibility: hidden;
+    }
+
+    /* wrap text at ~18 characters */
+    .text-limit {
+      display: inline-block;
+      max-width: 18ch;
+      white-space: normal;
+    }
+  </style>
 </head>
 
 
