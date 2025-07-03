@@ -17,12 +17,22 @@
 
 <body class="bg-gray-50 text-gray-900">
 <header class="sticky top-0 z-50 bg-gray-800 text-white py-6 shadow">
-  <div class="container mx-auto px-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+  <div class="container mx-auto px-4 flex flex-col lg:flex-row lg:items-center lg:justify-between">
     <div>
       <h1 class="text-3xl font-bold">Teenage Engineering OP-XY Cheat Sheet</h1>
       <p class="mt-1 text-gray-300">Quick reference guide for core actions</p>
+
+      <!-- Add your nav buttons here -->
+      <nav class="mt-4 flex flex-wrap gap-2">
+        <a href="#sequencing"       class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">Sequencing</a>
+        <a href="#performance"      class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">Performance</a>
+        <a href="#sound-design"     class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">Sound Design</a>
+        <a href="#system-setup"     class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">System & Setup</a>
+        <a href="#asset-reference"  class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">All Assets</a>
+      </nav>
     </div>
-    <div class="relative mt-4 sm:mt-0 w-full sm:w-auto">
+
+    <div class="relative mt-4 lg:mt-0 w-full lg:w-auto">
       <input
         id="searchBox"
         type="text"
@@ -41,9 +51,10 @@
 
 
 
+
   <main class="container mx-auto px-4 py-8 space-y-12">
     <!-- Sequencing & Arrangement -->
-    <section>
+    <section id="sequencing">
       <h2 class="text-2xl font-semibold mb-4">🎛️ Sequencing &amp; Arrangement (40%)</h2>
       <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
         <colgroup>
@@ -166,7 +177,7 @@
     </section>
 
     <!-- Performance & Recording -->
-    <section>
+   <section id="performance">
       <h2 class="text-2xl font-semibold mb-4">🎹 Performance &amp; Recording (30%)</h2>
       <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
         <colgroup>
@@ -277,7 +288,7 @@
     </section>
 
     <!-- Sound Design & Mixing -->
-    <section>
+    <section id="sound-design">
       <h2 class="text-2xl font-semibold mb-4">🎧 Sound Design &amp; Mixing (20%)</h2>
       <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
         <colgroup>
@@ -360,7 +371,7 @@
     </section>
 
     <!-- System & Setup -->
-    <section>
+    <section id="system-setup">
       <h2 class="text-2xl font-semibold mb-4">⚙️ System &amp; Setup (10%)</h2>
       <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
         <colgroup>
@@ -394,7 +405,7 @@
     </section>
   </main>
 <!-- Assets Grid – insert this just above the closing </main> tag in your existing index.html -->
-<section class="w-full max-w-4xl mx-auto px-4">
+<section class="w-full max-w-4xl mx-auto px-4" id="asset-reference">
   <h2 class="text-2xl font-semibold mb-4">📦 All Assets (64 files)</h2>
   <div
     class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6
