@@ -48,23 +48,23 @@
       white-space: normal;
     }
 
-  /* NEW: chips container that wraps, and unbreakable image+text chips */
-  .chips {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
-    margin: 0 .25rem;
-  }
-  .chip img {
-    flex-shrink: 0;
-  }
-  .chip .text-limit {
-    margin-left: .25rem;
-  }
+ .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      align-items: center;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+    .chip img {
+      flex-shrink: 0;
+    }
+    .chip .text-limit {
+      margin-left: .25rem;
+    }
 
   </style>
 </head>
