@@ -47,6 +47,25 @@
       max-width: 18ch;
       white-space: normal;
     }
+
+  /* NEW: chips container that wraps, and unbreakable image+text chips */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    margin: 0 .25rem;
+  }
+  .chip img {
+    flex-shrink: 0;
+  }
+  .chip .text-limit {
+    margin-left: .25rem;
+  }
+
   </style>
 </head>
 
@@ -108,7 +127,7 @@
         </thead>
         <tbody class="divide-y">
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Add a bar</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Add a bar</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -116,7 +135,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Remove a bar</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Remove a bar</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -124,7 +143,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Duplicate current bar</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Duplicate current bar</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -134,7 +153,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Set pattern length</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Set pattern length</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">hold → tap desired</span>
@@ -143,7 +162,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Copy/paste a step</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Copy/paste a step</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">→</span>
@@ -152,7 +171,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Nudge a step off-grid</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Nudge a step off-grid</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -162,7 +181,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Tie/extend a note</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Tie/extend a note</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -170,7 +189,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Add Step Component</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Add Step Component</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -178,7 +197,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Create new pattern</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Create new pattern</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">→</span>
@@ -186,7 +205,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Copy/paste pattern</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Copy/paste pattern</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">→</span>
@@ -196,32 +215,24 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Delete pattern</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Delete pattern</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">→</span>
               <img src="assets/m4.JPEG" alt="M4 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
             </td>
           </tr>
-          <tr class="sheet-row">
-<tr class="sheet-row">
-  <td class="px-4 py-2"><span class="text-limit">Sample Action</span></td>
-  <td class="px-4 py-2 flex flex-wrap items-center">
-    <img src="assets/plus.PNG" alt="Plus icon" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-    <span class="mx-1 text-limit">wrap this text example</span>
-    <img src="assets/white-step.JPEG" alt="White step icon" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-    <span class="mx-1 text-limit">wrap this text example #2</span>
-  </td>
-</tr>
-
+         <tr class="sheet-row">
+            <td class="px-4 py-2 chips"><span class="text-limit">Scroll through patterns</span></td>
+            <td class="px-4 py-2 flex flex-wrap items-center">
+              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+              <span class="mx-1 text-limit">turn white encoder</span>
+              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
+            </td>
+          </tr>
         </tbody>
       </table>
     </section>
-
-    
-
-
-
 
     <!-- Performance & Recording -->
    <section id="performance">
@@ -239,7 +250,7 @@
         </thead>
         <tbody class="divide-y">
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Step-record mode</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Step-record mode</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">enter steps</span>
@@ -248,7 +259,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Live record mode</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Live record mode</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -257,7 +268,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Parameter lock</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Parameter lock</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <span class="mx-1 text-limit">hold target step</span>
               <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
@@ -267,21 +278,21 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Record knob automation</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Record knob automation</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">turn knob</span>
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Smooth automation</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Smooth automation</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">turn white encoder</span>
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Undo last edit</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Undo last edit</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -289,7 +300,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Erase current track</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Erase current track</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -297,7 +308,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Punch-in FX live</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Punch-in FX live</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -305,7 +316,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Sequence Punch-in FX</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Sequence Punch-in FX</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">→ FX track,</span>
@@ -313,7 +324,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Mute/unmute track</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Mute/unmute track</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/mixer.JPEG" alt="Mixer button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -323,7 +334,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Quick mute in Arrange</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Quick mute in Arrange</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <span class="mx-1 text-limit">Click the white knob to mute</span>
               <span class="text-limit">the selected track</span>
@@ -350,7 +361,7 @@
         </thead>
         <tbody class="divide-y">
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Load synth/sample pack</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Load synth/sample pack</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/instrument.JPEG" alt="Instrument button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">+</span>
@@ -360,7 +371,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Adjust track volume</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Adjust track volume</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/mixer.JPEG" alt="Mixer button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">white encoder</span>
@@ -368,7 +379,7 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">FX-send track select</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">FX-send track select</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">In Auxiliary mode, press</span>
@@ -391,21 +402,21 @@
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Tweak reverb</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Tweak reverb</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">FX track, turn knob</span>
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Launch Brain™ generator</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Launch Brain™ generator</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">choose Brain track</span>
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Toggle keyboard velocity</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Toggle keyboard velocity</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">→</span>
@@ -433,14 +444,14 @@
         </thead>
         <tbody class="divide-y">
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Firmware update / factory reset</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Firmware update / factory reset</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">hold during power-on</span>
             </td>
           </tr>
          <tr class="sheet-row">
-            <td class="px-4 py-2"><span class="text-limit">Keyboard settings menu</span></td>
+            <td class="px-4 py-2 chips"><span class="text-limit">Keyboard settings menu</span></td>
             <td class="px-4 py-2 flex flex-wrap items-center">
               <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <span class="mx-1 text-limit">→</span>
