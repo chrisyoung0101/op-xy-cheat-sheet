@@ -5,19 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OP-XY Cheat Sheet</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
-    :root {
-      /* match this to the final height of your fixed header */
-      --nav-height: 4rem;
-    }
-
-    /* ensure when we scrollIntoView, items clear the fixed nav */
-    .sheet-row,
-    .asset-card {
-      scroll-margin-top: var(--nav-height);
-    }
-
     /* wrap text at whole-word boundaries once it reaches ~18 characters */
     .text-limit {
       display: inline-block;
@@ -28,7 +16,7 @@
 </head>
 
 <body class="bg-gray-50 text-gray-900">
-<<header class="bg-gray-800 text-white py-6 shadow">
+<header class="sticky top-0 z-50 bg-gray-800 text-white py-6 shadow">
   <div class="container mx-auto px-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
     <div>
       <h1 class="text-3xl font-bold">Teenage Engineering OP-XY Cheat Sheet</h1>
@@ -49,6 +37,7 @@
     </div>
   </div>
 </header>
+
 
 
 
