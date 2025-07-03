@@ -11,10 +11,11 @@
       --nav-height: 4rem;
     }
 
-    /* leave room for the header whenever you jump to an ID */
-    section[id] {
-      scroll-margin-top: var(--nav-height);
-    }
++   /* ensure any in-page jump leaves room for the header */
++   html {
++     scroll-padding-top: var(--nav-height);
++     scroll-behavior: smooth; /* optional, but nice for smooth anchor scroll */
++   }
 
     /* wrap shortcut text at ~18 chars */
     .text-limit {
@@ -24,6 +25,7 @@
     }
   </style>
 </head>
+
 
 
 
