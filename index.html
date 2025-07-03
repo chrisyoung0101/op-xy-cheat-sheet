@@ -15,27 +15,28 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
-<header class="bg-gray-800 text-white py-6 shadow">
+<<header class="bg-gray-800 text-white py-6 shadow">
   <div class="container mx-auto px-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
     <div>
       <h1 class="text-3xl font-bold">Teenage Engineering OP-XY Cheat Sheet</h1>
       <p class="mt-1 text-gray-300">Quick reference guide for core actions</p>
     </div>
-    <div class="relative mt-4 sm:mt-0">
+    <div class="relative mt-4 sm:mt-0 w-full sm:w-auto">
       <input
         id="searchBox"
         type="text"
         placeholder="Search…"
-        class="w-full sm:w-64 px-3 py-2 rounded border border-gray-300 text-gray-900 focus:outline-none focus:ring"
         autocomplete="off"
+        class="w-full sm:w-64 px-3 py-2 rounded border border-gray-300 text-gray-900 focus:outline-none focus:ring"
       />
       <ul
         id="suggestionBox"
-        class="absolute top-full left-0 right-0 z-50 mt-1 bg-white border border-gray-300 rounded max-h-60 overflow-auto hidden"
+        class="absolute top-full left-0 right-0 z-50 mt-1 bg-white border border-gray-300 rounded max-h-60 overflow-auto hidden text-gray-900"
       ></ul>
     </div>
   </div>
 </header>
+
 
 
   <main class="container mx-auto px-4 py-8 space-y-12">
@@ -737,70 +738,43 @@
 
 <script>
 (function(){
-  const searchInput    = document.getElementById('searchBox');
-  const suggestionBox  = document.getElementById('suggestionBox');
+  const searchInput   = document.getElementById('searchBox');
+  const suggestionBox = document.getElementById('suggestionBox');
 
-  // Gather searchable items (text + element)
+  // collect all searchable rows and cards
   const items = [];
-  document.querySelectorAll('.sheet-row').forEach(row => {
-    const txt = row.textContent.trim();
-    items.push({ text: txt, el: row });
-  });
-  document.querySelectorAll('.asset-card').forEach(card => {
-    const txt = card.textContent.trim();
-    items.push({ text: txt, el: card });
-  });
+  document.querySelectorAll('.sheet-row').forEach(r => items.push({ text: r.textContent.trim(), el: r }));
+  document.querySelectorAll('.asset-card').forEach(c => items.push({ text: c.textContent.trim(), el: c }));
 
-  // Utility: slugify for scrolling targets (optional)
-  function scrollTo(el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-
-  // Build suggestion list
   searchInput.addEventListener('input', function(){
     const q = this.value.trim().toLowerCase();
     suggestionBox.innerHTML = '';
+    if (!q) return suggestionBox.classList.add('hidden');
 
-    if (!q) {
-      suggestionBox.classList.add('hidden');
-      return;
-    }
+    // find up to 10 matches
+    const matches = items.filter(i => i.text.toLowerCase().includes(q)).slice(0,10);
+    if (!matches.length) return suggestionBox.classList.add('hidden');
 
-    // filter items
-    const matches = items
-      .filter(item => item.text.toLowerCase().includes(q))
-      .slice(0, 10); // up to 10 suggestions
-
-    if (!matches.length) {
-      suggestionBox.classList.add('hidden');
-      return;
-    }
-
-    // show list
-    matches.forEach((item, idx) => {
+    matches.forEach((m, idx) => {
       const li = document.createElement('li');
-      li.textContent = item.text;
-      li.dataset.idx  = idx;
-      li.className    = 'px-3 py-2 hover:bg-gray-200 cursor-pointer';
+      li.textContent = m.text;
+      li.dataset.idx = idx;
+      li.className   = 'px-3 py-2 hover:bg-gray-200 cursor-pointer text-gray-900';
       suggestionBox.appendChild(li);
     });
 
     suggestionBox.classList.remove('hidden');
   });
 
-  // Click on suggestion
   suggestionBox.addEventListener('click', e => {
     if (e.target.tagName !== 'LI') return;
     const idx = Number(e.target.dataset.idx);
-    const match = items.filter(item =>
-      item.text.toLowerCase().includes(searchInput.value.trim().toLowerCase())
-    )[idx];
-    if (match) scrollTo(match.el);
+    const match = items.filter(i => i.text.toLowerCase().includes(searchInput.value.trim().toLowerCase()))[idx];
+    if (match) match.el.scrollIntoView({ behavior:'smooth', block:'center' });
     suggestionBox.classList.add('hidden');
     searchInput.value = '';
   });
 
-  // Click outside or blur hides suggestions
   document.addEventListener('click', e => {
     if (!searchInput.contains(e.target) && !suggestionBox.contains(e.target)) {
       suggestionBox.classList.add('hidden');
