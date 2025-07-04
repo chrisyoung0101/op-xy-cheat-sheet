@@ -2,892 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OP-XY Cheat Sheet</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Cheat Sheet</title>
   <style>
-    :root {
-      /* must match your header’s total height (padding + line-height etc) */
-      --nav-height: 4rem;
+    /* reset and type */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: sans-serif;
+      line-height: 1.4;
+      background: #fafafa;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
     }
 
-    /* make your header sticky as before */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
+    /* main container centers and constrains width */
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 800px;
     }
 
-    /* smooth any scrollIntoView or native anchor jumps */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* modern browsers: ensure any element with an ID will stop below the header */
-    [id] {
-      scroll-margin-top: var(--nav-height);
-    }
-
-    /* fallback hack: insert invisible spacer before each section */
-    section[id] {
-      position: relative;
-    }
-    section[id]::before {
-      content: "";
-      position: absolute;
-      top: calc(-1 * var(--nav-height));
-      height: var(--nav-height);
-      width: 1px;
-      visibility: hidden;
-    }
-
-    /* wrap text at ~18 characters */
-    .text-limit {
-      display: inline-block;
-      max-width: 18ch;
-      white-space: normal;
-    }
-
- .chips {
+    /* each row is a flexbox that wraps as needed */
+    .row {
       display: flex;
       flex-wrap: wrap;
-      gap: .5rem;
-      align-items: center;
-    }
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      white-space: nowrap;
-    }
-    .chip img {
-      flex-shrink: 0;
-    }
-    .chip .text-limit {
-      margin-left: .25rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
+    /* description on the left, action on the right */
+    .row .description {
+      flex: 1 1 30%;
+      min-width: 180px;
+      padding: 1rem;
+      background: #f0f0f0;
+      font-weight: bold;
+    }
+    .row .action {
+      flex: 1 1 65%;
+      min-width: 200px;
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* styling for individual action steps */
+    .action .step {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-width: 60px;
+    }
+    .step.text {
+      flex: 1 1 120px;
+      word-wrap: break-word;
+    }
+    .step.image img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .step.symbol {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
   </style>
 </head>
+<body>
 
-
-
-
-
-<body class="bg-gray-50 text-gray-900">
-<header class="sticky top-0 z-50 bg-gray-800 text-white py-6 shadow">
-  <div class="container mx-auto px-4 flex flex-col lg:flex-row lg:items-center lg:justify-between">
-    <div>
-      <h1 class="text-3xl font-bold">Teenage Engineering OP-XY Cheat Sheet</h1>
-      <p class="mt-1 text-gray-300">Quick reference guide for core actions</p>
-
-      <!-- Add your nav buttons here -->
-      <nav class="mt-4 flex flex-wrap gap-2">
-        <a href="#sequencing"       class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">Sequencing</a>
-        <a href="#performance"      class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">Performance</a>
-        <a href="#sound-design"     class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">Sound Design</a>
-        <a href="#system-setup"     class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">System & Setup</a>
-        <a href="#asset-reference"  class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">All Assets</a>
-      </nav>
+  <div class="container">
+    <!-- example row #1 -->
+    <div class="row">
+      <div class="description">
+        Select the “Pattern” menu
+      </div>
+      <div class="action">
+        <div class="step image">
+          <img src="pattern-icon.png" alt="Pattern icon">
+        </div>
+        <div class="step symbol">→</div>
+        <div class="step text">Open Pattern Length</div>
+      </div>
     </div>
 
-    <div class="relative mt-4 lg:mt-0 w-full lg:w-auto">
-      <input
-        id="searchBox"
-        type="text"
-        placeholder="Search…"
-        autocomplete="off"
-        class="w-full sm:w-64 px-3 py-2 rounded border border-gray-300 text-gray-900 focus:outline-none focus:ring"
-      />
-      <ul
-        id="suggestionBox"
-        class="absolute top-full left-0 right-0 z-50 mt-1 bg-white border border-gray-300 rounded max-h-60 overflow-auto hidden text-gray-900"
-      ></ul>
+    <!-- example row #2 -->
+    <div class="row">
+      <div class="description">
+        Add a new bar
+      </div>
+      <div class="action">
+        <div class="step symbol">+</div>
+        <div class="step text">Press “Add Bar”</div>
+      </div>
     </div>
+
+    <!-- example row #3 -->
+    <div class="row">
+      <div class="description">
+        Remove selected step
+      </div>
+      <div class="action">
+        <div class="step image">
+          <img src="trash-icon.png" alt="Trash">
+        </div>
+        <div class="step symbol">−</div>
+        <div class="step text">Confirm deletion</div>
+      </div>
+    </div>
+
+    <!-- …you’ll append more .row blocks here… -->
   </div>
-</header>
-
-
-
-
-
-  <main class="container mx-auto px-4 py-8 space-y-12">
-    <!-- Sequencing & Arrangement -->
-    <section id="sequencing">
-      <h2 class="text-2xl font-semibold mb-4">🎛️ Sequencing &amp; Arrangement (40%)</h2>
-      <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
-        <colgroup>
-          <col class="w-1/3">
-          <col class="w-2/3">
-        </colgroup>
-        <thead class="bg-gray-100 border-b">
-         <tr class="sheet-row">
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y">
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Add a bar</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/plus.PNG" alt="Plus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Remove a bar</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/minus.JPEG" alt="Minus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Duplicate current bar</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/plus.PNG" alt="Plus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Set pattern length</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">hold → tap desired</span>
-              <span class="text-limit">last step</span>
-              <img src="assets/white-step.JPEG" alt="White step" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Copy/paste a step</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">→</span>
-              <span class="mx-1 text-limit">destination</span>
-              <img src="assets/white-step.JPEG" alt="White step" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Nudge a step off-grid</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/minus.JPEG" alt="Minus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">or</span>
-              <img src="assets/plus.PNG" alt="Plus button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Tie/extend a note</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/white-step.JPEG" alt="White step" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Add Step Component</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/random-component.JPEG" alt="Component key" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Create new pattern</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">→</span>
-              <img src="assets/m1.JPEG" alt="M1 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Copy/paste pattern</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">→</span>
-              <img src="assets/m2.JPEG" alt="M2 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">move,</span>
-              <img src="assets/m3.JPEG" alt="M3 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Delete pattern</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">→</span>
-              <img src="assets/m4.JPEG" alt="M4 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Scroll through patterns</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/arrange.JPEG" alt="Arrange button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">turn white encoder</span>
-              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- Performance & Recording -->
-   <section id="performance">
-      <h2 class="text-2xl font-semibold mb-4">🎹 Performance &amp; Recording (30%)</h2>
-      <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
-        <colgroup>
-          <col class="w-1/3">
-          <col class="w-2/3">
-        </colgroup>
-        <thead class="bg-gray-100 border-b">
-         <tr class="sheet-row">
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y">
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Step-record mode</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">enter steps</span>
-              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <img src="assets/encoder-dark-gray.JPEG" alt="Encoder dark" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Live record mode</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/play.JPEG" alt="Play button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">perform</span>
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Parameter lock</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <span class="mx-1 text-limit">hold target step</span>
-              <img src="assets/step-dark-gray.JPEG" alt="Step button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">twist a knob –</span>
-              <span class="text-limit">whichever</span>
-              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Record knob automation</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">turn knob</span>
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Smooth automation</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/bar.JPEG" alt="Bar button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">turn white encoder</span>
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Undo last edit</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Erase current track</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/record.JPEG" alt="Record button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/stop.JPEG" alt="Stop button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Punch-in FX live</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/track-7.JPEG" alt="FX key" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Sequence Punch-in FX</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">→ FX track,</span>
-              <img src="assets/track-7.JPEG" alt="FX key" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Mute/unmute track</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/mixer.JPEG" alt="Mixer button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/track-3.JPEG" alt="Track button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Quick mute in Arrange</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <span class="mx-1 text-limit">Click the white knob to mute</span>
-              <span class="text-limit">the selected track</span>
-              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- Sound Design & Mixing -->
-    <section id="sound-design">
-      <h2 class="text-2xl font-semibold mb-4">🎧 Sound Design &amp; Mixing (20%)</h2>
-      <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
-        <colgroup>
-          <col class="w-1/3">
-          <col class="w-2/3">
-        </colgroup>
-        <thead class="bg-gray-100 border-b">
-         <tr class="sheet-row">
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y">
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Load synth/sample pack</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/instrument.JPEG" alt="Instrument button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/shift.JPEG" alt="Shift button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">+</span>
-              <img src="assets/track-2.JPEG" alt="Track button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Adjust track volume</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/mixer.JPEG" alt="Mixer button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">white encoder</span>
-              <img src="assets/white-encoder.JPEG" alt="White encoder" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">FX-send track select</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">In Auxiliary mode, press</span>
-              <span class="text-limit">the track button for FX I</span>
-              <span class="text-limit">(track 7) or FX II</span>
-              <span class="text-limit">(track 8). Press M2 to</span>
-              <span class="text-limit">view the routing module.</span>
-              <span class="text-limit">Click any encoder to</span>
-              <span class="text-limit">switch between</span>
-              <span class="text-limit">instrument tracks 1–4</span>
-              <span class="text-limit">and 5–8, toggling</span>
-              <span class="text-limit">each on or off for</span>
-              <span class="text-limit">this FX send.</span>
-              <span class="text-limit">When you’ve selected</span>
-              <span class="text-limit">the desired tracks,</span>
-              <span class="text-limit">the FX send will</span>
-              <span class="text-limit">automatically apply</span>
-              <span class="text-limit">to those tracks</span>
-              <span class="text-limit">during playback.</span>
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Tweak reverb</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">FX track, turn knob</span>
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Launch Brain™ generator</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/auxiliary.JPEG" alt="Aux button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">choose Brain track</span>
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Toggle keyboard velocity</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">→</span>
-              <img src="assets/m1.JPEG" alt="M1 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">→ Velocity toggle</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- System & Setup -->
-    <section id="system-setup">
-      <h2 class="text-2xl font-semibold mb-4">⚙️ System &amp; Setup (10%)</h2>
-      <table class="w-full table-fixed bg-white rounded-lg shadow overflow-hidden">
-        <colgroup>
-          <col class="w-1/3">
-          <col class="w-2/3">
-        </colgroup>
-        <thead class="bg-gray-100 border-b">
-         <tr class="sheet-row">
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
-            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Shortcut</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y">
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Firmware update / factory reset</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">hold during power-on</span>
-            </td>
-          </tr>
-         <tr class="sheet-row">
-            <td class="px-4 py-2 chips"><span class="text-limit">Keyboard settings menu</span></td>
-            <td class="px-4 py-2 flex flex-wrap items-center">
-              <img src="assets/com.JPEG" alt="Com button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <span class="mx-1 text-limit">→</span>
-              <img src="assets/m1.JPEG" alt="M1 button" class="w-10 h-10 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
-<!-- Assets Grid – insert this just above the closing </main> tag in your existing index.html -->
-<section class="w-full max-w-4xl mx-auto px-4" id="asset-reference">
-  <h2 class="text-2xl font-semibold mb-4">📦 All Assets (64 files)</h2>
-  <div
-    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6
-           divide-x-2 divide-y-2 divide-gray-400
-           border-2 border-gray-400"
-  >
-
-    <!-- **#1** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/arrange.JPEG" alt="arrange.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">arrange.JPEG</span>
-    </div>
-    <!-- **#2** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/auxiliary.JPEG" alt="auxiliary.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">auxiliary.JPEG</span>
-    </div>
-    <!-- **#3** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/bar.JPEG" alt="bar.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">bar.JPEG</span>
-    </div>
-    <!-- **#4** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/bend-step-component.JPEG" alt="bend-step-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">bend-step-component.JPEG</span>
-    </div>
-    <!-- **#5** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/click-encoder-example.JPEG" alt="click-encoder-example.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">click-encoder-example.JPEG</span>
-    </div>
-    <!-- **#6** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/com.JPEG" alt="com.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">com.JPEG</span>
-    </div>
-    <!-- **#7** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/combo-press-a-button.JPEG" alt="combo-press-a-button.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">combo-press-a-button.JPEG</span>
-    </div>
-    <!-- **#8** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/copy-a-preset.JPEG" alt="copy-a-preset.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">copy-a-preset.JPEG</span>
-    </div>
-    <!-- **#9** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/dark-gray-encoder.JPEG" alt="dark-gray-encoder.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">dark-gray-encoder.JPEG</span>
-    </div>
-    <!-- **#10** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/delete-preset.JPEG" alt="delete-preset.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">delete-preset.JPEG</span>
-    </div>
-    <!-- **#11** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/hold-component.JPEG" alt="hold-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">hold-component.JPEG</span>
-    </div>
-    <!-- **#12** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/instrument.JPEG" alt="instrument.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">instrument.JPEG</span>
-    </div>
-    <!-- **#13** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/isolate-pattern-for-selected-key.JPEG" alt="isolate-pattern-for-selected-key.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">isolate-pattern-for-selected-key.JPEG</span>
-    </div>
-    <!-- **#14** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/jump-component.JPEG" alt="jump-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">jump-component.JPEG</span>
-    </div>
-    <!-- **#15** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/light-grey-encoder.JPEG" alt="light-grey-encoder.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">light-grey-encoder.JPEG</span>
-    </div>
-    <!-- **#16** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/light-grey-step.JPEG" alt="light-grey-step.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">light-grey-step.JPEG</span>
-    </div>
-    <!-- **#17** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/m1.JPEG" alt="m1.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">m1.JPEG</span>
-    </div>
-    <!-- **#18** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/m2.JPEG" alt="m2.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">m2.JPEG</span>
-    </div>
-    <!-- **#19** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/m3.JPEG" alt="m3.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">m3.JPEG</span>
-    </div>
-    <!-- **#20** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/m4.JPEG" alt="m4.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">m4.JPEG</span>
-    </div>
-    <!-- **#21** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/metronome.JPEG" alt="metronome.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">metronome.JPEG</span>
-    </div>
-    <!-- **#22** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/mid-gray-encoder.JPEG" alt="mid-gray-encoder.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">mid-gray-encoder.JPEG</span>
-    </div>
-    <!-- **#23** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/minus.JPEG" alt="minus.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">minus.JPEG</span>
-    </div>
-    <!-- **#24** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/mixer.JPEG" alt="mixer.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">mixer.JPEG</span>
-    </div>
-    <!-- **#25** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/multiply-component.JPEG" alt="multiply-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">multiply-component.JPEG</span>
-    </div>
-    <!-- **#26** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/note_length-style-glide-stereo.JPEG" alt="note_length-style-glide-stereo.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">note_length-style-glide-stereo.JPEG</span>
-    </div>
-    <!-- **#27** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/paste-preset.JPEG" alt="paste-preset.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">paste-preset.JPEG</span>
-    </div>
-    <!-- **#28** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/play.JPEG" alt="play.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">play.JPEG</span>
-    </div>
-    <!-- **#29** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/players.JPEG" alt="players.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">players.JPEG</span>
-    </div>
-    <!-- **#30** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/plus.PNG" alt="plus.PNG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">plus.PNG</span>
-    </div>
-    <!-- **#31** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/portamento-component.JPEG" alt="portamento-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">portamento-component.JPEG</span>
-    </div>
-    <!-- **#32** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/press-and-hold-a-button.JPEG" alt="press-and-hold-a-button.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">press-and-hold-a-button.JPEG</span>
-    </div>
-    <!-- **#33** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/projects.JPEG" alt="projects.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">projects.JPEG</span>
-    </div>
-    <!-- **#34** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/pulse-component.JPEG" alt="pulse-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">pulse-component.JPEG</span>
-    </div>
-    <!-- **#35** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/ramp-down-step-component.JPEG" alt="ramp-down-step-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">ramp-down-step-component.JPEG</span>
-    </div>
-    <!-- **#36** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/ramp-up-step-component.JPEG" alt="ramp-up-step-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">ramp-up-step-component.JPEG</span>
-    </div>
-    <!-- **#37** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/random-component.JPEG" alt="random-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">random-component.JPEG</span>
-    </div>
-    <!-- **#38** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/record.JPEG" alt="record.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">record.JPEG</span>
-    </div>
-        <!-- **#39** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/rename-a-preset.JPEG" alt="rename-a-preset.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">rename-a-preset.JPEG</span>
-    </div>
-    <!-- **#40** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/rotate-encoder.JPEG" alt="rotate-encoder.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">rotate-encoder.JPEG</span>
-    </div>
-    <!-- **#41** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/sample.JPEG" alt="sample.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">sample.JPEG</span>
-    </div>
-    <!-- **#42** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/save-a-preset.JPEG" alt="save-a-preset.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">save-a-preset.JPEG</span>
-    </div>
-    <!-- **#43** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/scramble-a-track.JPEG" alt="scramble-a-track.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">scramble-a-track.JPEG</span>
-    </div>
-    <!-- **#44** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/sequence-press-example-2.JPEG" alt="sequence-press-example-2.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">sequence-press-example-2.JPEG</span>
-    </div>
-    <!-- **#45** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/sequence-press-example.JPEG" alt="sequence-press-example.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">sequence-press-example.JPEG</span>
-    </div>
-    <!-- **#46** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/shift.JPEG" alt="shift.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">shift.JPEG</span>
-    </div>
-    <!-- **#47** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/single-press-button.JPEG" alt="single-press-button.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">single-press-button.JPEG</span>
-    </div>
-    <!-- **#48** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/skip-parameter-lock-step-component-6.JPEG" alt="skip-parameter-lock-step-component-6.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">skip-parameter-lock-step-component-6.JPEG</span>
-    </div>
-    <!-- **#49** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/skip-step-component.JPEG" alt="skip-step-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">skip-step-component.JPEG</span>
-    </div>
-    <!-- **#50** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/skip-trigger-component.JPEG" alt="skip-trigger-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">skip-trigger-component.JPEG</span>
-    </div>
-    <!-- **#51** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/speed-patter-range-hold.JPEG" alt="speed-patter-range-hold.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">speed-patter-range-hold.JPEG</span>
-    </div>
-    <!-- **#52** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/step-dark-gray.JPEG" alt="step-dark-gray.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">step-dark-gray.JPEG</span>
-    </div>
-    <!-- **#53** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/stop.JPEG" alt="stop.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">stop.JPEG</span>
-    </div>
-    <!-- **#54** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/tonality-component.JPEG" alt="tonality-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">tonality-component.JPEG</span>
-    </div>
-    <!-- **#55** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/track-1.JPEG" alt="track-1.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">track-1.JPEG</span>
-    </div>
-    <!-- **#56** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/track-2.JPEG" alt="track-2.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">track-2.JPEG</span>
-    </div>
-    <!-- **#57** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/track-3.JPEG" alt="track-3.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">track-3.JPEG</span>
-    </div>
-    <!-- **#58** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/track-5.JPEG" alt="track-5.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">track-5.JPEG</span>
-    </div>
-    <!-- **#59** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/track-6.JPEG" alt="track-6.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">track-6.JPEG</span>
-    </div>
-    <!-- **#60** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/track-7.JPEG" alt="track-7.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">track-7.JPEG</span>
-    </div>
-    <!-- **#61** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/track-8.JPEG" alt="track-8.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">track-8.JPEG</span>
-    </div>
-    <!-- **#62** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/velocity-component.JPEG" alt="velocity-component.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">velocity-component.JPEG</span>
-    </div>
-    <!-- **#63** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/white-encoder.JPEG" alt="white-encoder.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">white-encoder.JPEG</span>
-    </div>
-    <!-- **#64** -->
-    <div class="asset-card flex flex-col items-center">
-      <img src="assets/white-step.JPEG" alt="white-step.JPEG" class="w-16 h-16 sm:w-24 sm:h-24 object-contain">
-      <span class="mt-2 text-xs sm:text-sm break-words text-center">white-step.JPEG</span>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-  
-
-  <footer class="bg-gray-800 text-gray-400 py-6 mt-12">
-    <div class="container mx-auto px-4 text-center text-sm">
-      &copy; 2025 OP-XY Cheat Sheet
-    </div>
-  </footer>
-
-<script>
-(function(){
-  const searchInput   = document.getElementById('searchBox');
-  const suggestionBox = document.getElementById('suggestionBox');
-
-  // gather all searchable items
-  const items = [];
-  document.querySelectorAll('.sheet-row').forEach(r => items.push({ text: r.textContent.trim(), el: r }));
-  document.querySelectorAll('.asset-card').forEach(c => items.push({ text: c.textContent.trim(), el: c }));
-
-  function scrollToElement(el) {
-    const header = document.querySelector('header');
-    const headerHeight = header.offsetHeight;
-    const rect = el.getBoundingClientRect();
-    const absoluteY = window.pageYOffset + rect.top;
-    window.scrollTo({
-      top: absoluteY - headerHeight,
-      behavior: 'smooth'
-    });
-  }
-
-  searchInput.addEventListener('input', function(){
-    const q = this.value.trim().toLowerCase();
-    suggestionBox.innerHTML = '';
-    if (!q) return suggestionBox.classList.add('hidden');
-
-    const matches = items.filter(i => i.text.toLowerCase().includes(q)).slice(0,10);
-    if (!matches.length) return suggestionBox.classList.add('hidden');
-
-    matches.forEach((m, idx) => {
-      const li = document.createElement('li');
-      li.textContent = m.text;
-      li.dataset.idx = idx;
-      li.className   = 'px-3 py-2 hover:bg-gray-200 cursor-pointer text-gray-900';
-      suggestionBox.appendChild(li);
-    });
-    suggestionBox.classList.remove('hidden');
-  });
-
-  suggestionBox.addEventListener('click', e => {
-    if (e.target.tagName !== 'LI') return;
-    const idx   = Number(e.target.dataset.idx);
-    const match = items.filter(i =>
-      i.text.toLowerCase().includes(searchInput.value.trim().toLowerCase())
-    )[idx];
-    if (match) scrollToElement(match.el);
-    suggestionBox.classList.add('hidden');
-    searchInput.value = '';
-  });
-
-  document.addEventListener('click', e => {
-    if (!searchInput.contains(e.target) && !suggestionBox.contains(e.target)) {
-      suggestionBox.classList.add('hidden');
-    }
-  });
-})();
-</script>
-
-
-<script>
-// intercept all in-page nav clicks
-document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetEl = document.querySelector(targetId);
-    if (!targetEl) return;
-
-    const headerHeight = document.querySelector('header').offsetHeight;
-    const rect = targetEl.getBoundingClientRect();
-    const scrollTop = window.pageYOffset + rect.top - headerHeight;
-
-    window.scrollTo({ top: scrollTop, behavior: 'smooth' });
-    // update the URL hash without the browser’s default jump:
-    history.pushState(null, '', targetId);
-  });
-});
-</script>
-
-
-
 
 </body>
 </html>
