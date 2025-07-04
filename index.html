@@ -5,81 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Responsive Cheat Sheet</title>
   <style>
-    /* reset and type */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: sans-serif;
-      line-height: 1.4;
-      background: #fafafa;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      padding: 2rem;
-    }
+    /* make the action container flex-wrap as before */
+.row .action {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+}
 
-    /* main container centers and constrains width */
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      width: 100%;
-      max-width: 800px;
-    }
+/* each step will try to shrink before wrapping */
+.step {
+  flex: 0 1 auto;     /* don't force a fixed % width */
+  min-width: 40px;    /* but never disappear entirely */
+  max-width: 200px;   /* optional cap if you want */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-    /* each row is a flexbox that wraps as needed */
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
+/* text steps will never break internally */
+.step.text {
+  white-space: nowrap;
+}
 
-    /* description on the left, action on the right */
-    .row .description {
-      flex: 1 1 30%;
-      min-width: 180px;
-      padding: 1rem;
-      background: #f0f0f0;
-      font-weight: bold;
-    }
-    .row .action {
-      flex: 1 1 65%;
-      min-width: 200px;
-      padding: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.75rem;
-    }
+/* images naturally shrink inside their flex item */
+.step.image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-    /* styling for individual action steps */
-    .action .step {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      min-width: 60px;
-    }
-    .step.text {
-      flex: 1 1 120px;
-      word-wrap: break-word;
-    }
-    .step.image img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      border-radius: 4px;
-    }
-    .step.symbol {
-      font-size: 1.5rem;
-      line-height: 1;
-    }
+/* if you need to force an image+text pair to stay together,
+   wrap them in a single container in your HTML:
+     <div class="step group">
+       <img…><span>Some label</span>
+     </div>
+   and then add:
+*/
+.step.group {
+  white-space: nowrap;
+  flex: 0 1 auto;
+}
+
   </style>
 </head>
 <body>
