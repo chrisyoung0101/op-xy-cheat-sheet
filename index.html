@@ -1,6 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OP-XY Marker Breakdown</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #eee;
+            font-family: system-ui, sans-serif;
+            margin: 0;
+            padding: 1rem;
+            line-height: 1.5;
+        }
+        h1, h2 {
+            color: #fff;
+            font-size: clamp(1.2rem, 4vw, 2rem);
+        }
+        ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+        li::before {
+            content: "• ";
+            color: #888;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>OP-XY Marker Breakdown</h1>
+
+    <div class="section">
+        <h2>&lt;&gt;&lt;&gt; Button Combos</h2>
+        <ul>
+            <li>Hold Step to check/edit notes or add chord to step</li>
+            <li>Hold Step and press another step to extend the Note</li>
+            <li>Hold Step and press PLUS or MINUS to nudge the note (quantization off)</li>
+            <li>Hold key and press Record to show notes or press Step to record</li>
+            <li>Hold a step and adjust an encoder to lock a parameter</li>
+            <li>What number step is that? HOLD the step and the number will show</li>
+            <li>Record + Stop deletes current track</li>
+            <li>Select a bar: PRESS bar to advance</li>
+            <li>See what is on a step: hold it down, assigned keys light</li>
+            <li>Add step component: SHIFT + step, step flashes</li>
+            <li>Access instrument menu: Instrument ACTIVE, HOLD shift + Instrument</li>
+            <li>Granular tempo: SHIFT + adjust tempo</li>
+            <li>Link tracks: hold source track, press target track</li>
+            <li>Preset Options: hold track > M1-M4 for scramble, copy, save</li>
+            <li>Save preset: hold track > M4 save</li>
+            <li>SHIFT + Sampler: load sample</li>
+            <li>Mixer access: Mixer + M2 for EQ, Mixer twice for Aux mode</li>
+            <li>COM Mode exit: SHIFT + COM</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>&lt;&gt;&lt;&gt; tip (Information / Advice)</h2>
+        <ul>
+            <li>Pad not playing right? Remove velocity in instrument menu</li>
+            <li>Each track has independent bar measures</li>
+            <li>Punch-in FX: upper octave for melodic, lower for percussion</li>
+            <li>The last three buttons are G-force sensitive</li>
+            <li>Pulse step component: replays step, causes desync unless fixed</li>
+            <li>Pulse + Jump = stay in sync</li>
+            <li>Skip Trigger/Step/Param Lock Components: think "triggering" not "skipping"</li>
+            <li>Arrange Mode: scenes show mute/mix info</li>
+            <li>Arrange beyond 9 scenes: SHIFT + 0 + two-digit number</li>
+            <li>FX I to FX II: stack effects</li>
+            <li>Master Saturator is distortion</li>
+            <li>Presets exportable</li>
+            <li>Axis = FM synth good for lush strings</li>
+            <li>Organ type param 1 = Transistor / 8 = Church</li>
+            <li>COM Mode has useful system settings</li>
+            <li>MTP: sends files via connected computer</li>
+            <li>Firmware updates via Web MIDI or boot mode</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>&lt;&gt;&lt;&gt; encoder (Encoders & Their Function)</h2>
+        <ul>
+            <li>Bar Menu: Quantization, Length (Gate), Groove, Shape</li>
+            <li>Mixer Mode: FXI, FXII, Pan, Level</li>
+            <li>Master EQ: Low, Mid, High, All</li>
+            <li>Players Arpeggio: Rate, Pattern, Octaves / SHIFT: Note Length, Variation, Gliss, Stereo</li>
+            <li>Players Maestro: Roll, Variation, (N/A), Hold</li>
+            <li>Axis: Tone, Ratio, Shape, Tremolo</li>
+            <li>Dissolve: Swarm, AM, FM, Detune</li>
+            <li>EPiano: Tone, Texture, Punch, Time</li>
+            <li>Hardsync: Freq, Sub, Noise, Lowcut</li>
+            <li>Organ: Organ type, Sub Bass, Tremolo Amount, Rate</li>
+            <li>Prism: Shape, Ratio, Detune, Stereo</li>
+            <li>Simple: Shape, Pulse Width, Noise, Stereo</li>
+            <li>Wavetable: Table, Position, Warp, Drift</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>&lt;&gt;&lt;&gt; scenario (Step-by-step scenarios)</h2>
+        <ul>
+            <li>Adding steps to existing pattern</li>
+            <li>Pattern building with bars (drums/chords)</li>
+            <li>Adding parameter locks live or step-hold</li>
+            <li>Adding Fill FX via Punch-In</li>
+            <li>Stopping delay tails via double STOP</li>
+            <li>Syncopation/Polyrhythm example</li>
+            <li>Arpeggio burst (Players mode)</li>
+            <li>Using velocity & bend step components to control parameters</li>
+            <li>External MIDI control with multiple devices</li>
+            <li>Using tape without sending certain tracks</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>&lt;&gt;&lt;&gt; todo (Things to Learn / Follow Up On)</h2>
+        <ul>
+            <li>Learn Punch-In FX</li>
+            <li>Get explanation of Wavetable: Alter table vs position</li>
+            <li>Get all info boxes from videos</li>
+            <li>Think about creating a template project</li>
+            <li>Download Field Kit App for Mac</li>
+            <li>Learn Tape params</li>
+            <li>Multisampler deeper explanation</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>&lt;&gt;&lt;&gt; menu (Specific Menus & Navigation)</h2>
+        <ul>
+            <li>Players Menu: SHIFT + Players</li>
+            <li>Instrument Play Mode: M2 + SHIFT</li>
+            <li>Instrument Track Send: M3 + SHIFT</li>
+            <li>Instrument LFO Menu: M4</li>
+            <li>Instrument Menu: Instrument + SHIFT</li>
+            <li>User Note Menu: In tuning > user1 + M4</li>
+            <li>Sampler Menu: SHIFT + Sampler</li>
+            <li>Presets: Hold Track + SHIFT</li>
+            <li>Mixer Access</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>&lt;&gt;&lt;&gt; tape modules M1-M4 (Tape-Specific Controls)</h2>
+        <ul>
+            <li>M1: Tape UI</li>
+            <li>M2: Audio Send</li>
+            <li>M3: Filter</li>
+            <li>M4: LFO</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>&lt;&gt;&lt;&gt; fx params (FX Parameters)</h2>
+        <ul>
+            <li>Chorus: Rate / Depth / Feedback / Stereo</li>
+            <li>Delay: Size / Fine / Feedback / Dry</li>
+            <li>Distortion: Drive / Clip / Low-cut / Hi-cut</li>
+            <li>Lofi: Rate / Bits / Quality / Drift</li>
+            <li>Phaser: Frequency / Depth / Rate / Feedback</li>
+            <li>Reverb: Size / Mod / Tone / Dry-to-Wet</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Responsive Cheat Sheet</title>
@@ -454,3 +626,4 @@
 
 </body>
 </html>
+ -->
