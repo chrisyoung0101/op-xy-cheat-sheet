@@ -6,6 +6,153 @@
   <title>OP–XY Mobile Cheat Sheets</title>
   <style>
     :root {
+      --main-bg-page: #ffffff;
+      --main-bg-item: #f9f3e7;
+      --main-accent: #ff7043;
+      --main-text: #4e342e;
+      --main-text-muted: #6d4c41;
+      --tips-bg-page: #eef8fa;
+      --tips-bg-item: #ffffff;
+      --tips-accent: #4da6ff;
+      --tips-text: #1a3c40;
+      --tips-text-muted: #2a2a2a;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.4;
+      background: var(--main-bg-page);
+      color: var(--main-text);
+    }
+    .container, .tips-container {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .container {
+      background: var(--main-bg-page);
+    }
+    .tips-container {
+      background: var(--tips-bg-page);
+      margin-top: 2rem;
+    }
+    .item {
+      background: var(--main-bg-item);
+      border-left: 4px solid var(--main-accent);
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .desc {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--main-text);
+    }
+    .action {
+      font-size: 0.95rem;
+      color: var(--main-text-muted);
+    }
+    .tips-container .item {
+      background: var(--tips-bg-item);
+      border-left: 4px solid var(--tips-accent);
+      color: var(--tips-text);
+    }
+    .tips-container .desc {
+      color: var(--tips-text);
+    }
+    .tips-container .action {
+      color: var(--tips-text-muted);
+    }
+    @media (min-width: 600px) {
+      .item {
+        flex-direction: row;
+        align-items: center;
+      }
+      .desc {
+        width: 35%;
+        font-size: 1.05rem;
+      }
+      .action {
+        width: 65%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="container">
+      <h1>OP–XY Cheat Sheet</h1>
+      <div class="item"><div class="desc">Select a bar</div><div class="action">Press bar and it will advance to the next bar</div></div>
+      <div class="item"><div class="desc">What's the current bar?</div><div class="action">Hold bar while in play</div></div>
+      <div class="item"><div class="desc">Selectively delete with bar</div><div class="action">Hold bar and see options: clear notes, clear parameter lock, or clear all</div></div>
+      <div class="item"><div class="desc">Delete current track</div><div class="action">Record + Stop</div></div>
+      <div class="item"><div class="desc">Hold a step to check/edit notes or add a chord</div><div class="action">Hold a step</div></div>
+      <div class="item"><div class="desc">Extend the note</div><div class="action">Hold a step and press another step</div></div>
+      <div class="item"><div class="desc">Nudge the note</div><div class="action">Hold a step and press PLUS or MINUS (quantization off)</div></div>
+      <div class="item"><div class="desc">Show notes</div><div class="action">Hold a key and press Record, or press Step</div></div>
+      <div class="item"><div class="desc">Lock a parameter</div><div class="action">Hold a step and adjust a knob</div></div>
+      <div class="item"><div class="desc">What number step is that?</div><div class="action">Hold the step and the number will show</div></div>
+      <div class="item"><div class="desc">Last note</div><div class="action">Last note played gets assigned to select steps</div></div>
+      <div class="item"><div class="desc">Add step component to step</div><div class="action">Record note to step or Shift + step (step flashes)</div></div>
+      <div class="item"><div class="desc">Shift + lit step</div><div class="action">If it dims, no component. If it doesn't dim, has a component.</div></div>
+      <div class="item"><div class="desc">Where are the step components assigned to this pattern?</div><div class="action">Shift + lit step to see (dim = none, lit = component exists)</div></div>
+      <div class="item"><div class="desc">Add step component and choose setting</div><div class="action">Shift + step (blinks), keep holding shift, choose component, confirm value</div></div>
+      <div class="item"><div class="desc">What component is on this step?</div><div class="action">Hold Shift + press & release non-dim step to see component</div></div>
+      <div class="item"><div class="desc">Edit note</div><div class="action">Hold note, select new note, add old note back if desired</div></div>
+      <div class="item"><div class="desc">Add parameter lock</div><div class="action">Hold target step - turn knob</div></div>
+      <div class="item"><div class="desc">Arpeggios</div><div class="action">Hold note/chord, turn white encoder</div></div>
+      <div class="item"><div class="desc">Add new chord for maestro</div><div class="action">Shift and play chord</div></div>
+      <div class="item"><div class="desc">Granular tempo</div><div class="action">Shift + adjust tempo</div></div>
+      <div class="item"><div class="desc">Link tracks</div><div class="action">Hold the source track, press track to be linked</div></div>
+      <div class="item"><div class="desc">Filter (instrument)</div><div class="action">M3: click dark gray for type, mid-gray encoder for resonance</div></div>
+      <div class="item"><div class="desc">Copy preset</div><div class="action">Hold track, select copy via M1-4, release, hold destination track, paste</div></div>
+      <div class="item"><div class="desc">Save preset</div><div class="action">Hold track, select save (saved in category > snapshots)</div></div>
+      <div class="item"><div class="desc">Multi-out jack</div><div class="action">Select COM, light gray encoder for output type</div></div>
+      <div class="item"><div class="desc">Add an effect to a track</div><div class="action">Select track, Aux > FX, adjust send via M2, click encoder</div></div>
+      <div class="item"><div class="desc">Press arrange again to see Aux track</div><div class="action">Press arrange again</div></div>
+      <div class="item"><div class="desc">Mute and unmute tracks</div><div class="action">Click encoder, hold shift + track, hold instrument + track</div></div>
+      <div class="item"><div class="desc">Solo track while playing</div><div class="action">Hold down track</div></div>
+      <div class="item"><div class="desc">Change scene</div><div class="action">Hold Shift + 2 = scene 2</div></div>
+      <div class="item"><div class="desc">Song mode</div><div class="action">Arrange > hold shift + arrange again, type scene chain</div></div>
+      <div class="item"><div class="desc">Mix mode</div><div class="action">Hold down track to solo</div></div>
+      <div class="item"><div class="desc">Mute tracks while staying on the mixer</div><div class="action">Mix mode, hold shift + track</div></div>
+      <div class="item"><div class="desc">Hitting Mixer twice</div><div class="action">Gets you to Aux track mode</div></div>
+      <div class="item"><div class="desc">Getting to sampler engine</div><div class="action">Instrument selected, hold Shift + M1</div></div>
+      <div class="item"><div class="desc">Load a sample</div><div class="action">Shift + Sampler</div></div>
+      <div class="item"><div class="desc">Save a preset</div><div class="action">Hold track, select M4 : save</div></div>
+      <div class="item"><div class="desc">See what's on a step</div><div class="action">Hold step > assigned keys light</div></div>
+      <div class="item"><div class="desc">Add step component</div><div class="action">Hold Shift + press step (step flashes) + press step component & choose value</div></div>
+      <div class="item"><div class="desc">Edit current step component</div><div class="action">Hold shift > steps with components bright > press bright step > step flashes > shows assignment > remove as needed</div></div>
+    </section>
+    <!-- You can add a tips section or other sections here if desired -->
+    <!-- Example:
+    <section class="tips-container">
+      <h2>Tips</h2>
+      <div class="item"><div class="desc">Pad not playing right?</div><div class="action">Remove velocity in instrument menu</div></div>
+      ...
+    </section>
+    -->
+  </main>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP–XY Mobile Cheat Sheets</title>
+  <style>
+    :root {
       /* Main Section Colors */
       --main-bg-page: #ffffff;
       --main-bg-item: #f9f3e7;
@@ -780,4 +927,5 @@
 
 </body>
 </html>
+ -->
  -->
