@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OP–XY Cheat Sheet</title>
+  <title>OP–XY Mobile Cheat Sheet</title>
   <style>
     :root {
       --nav-bg: #333;
@@ -13,68 +13,52 @@
       --item-bg: #fff;
       --accent-main: #ff7043;
       --accent-tips: #4da6ff;
+      --accent-menu: #66bb6a;
+      --accent-enc: #ab47bc;
+      --accent-step: #29b6f6;
+      --accent-fx: #ffa726;
+      --accent-tape: #8d6e63;
+      --accent-scn: #d4e157;
+      --accent-misc: #5c6bc0;
       --text: #333;
     }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--main-bg);
-      color: var(--text);
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background: var(--nav-bg);
-      padding: 0.75rem;
-      display: flex;
-      justify-content: space-around;
-      z-index: 100;
-    }
-    nav a {
-      color: var(--nav-text);
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    section {
-      padding: 1rem;
-    }
-    h2 {
-      margin-top: 0;
-    }
-    details {
-      background: var(--item-bg);
-      border-left: 4px solid;
-      border-radius: 0.5rem;
-      margin-bottom: 0.75rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      padding: 0.5rem 1rem;
-    }
-    details[open] {
-      padding-bottom: 0.75rem;
-    }
-    summary {
-      font-weight: 600;
-      cursor: pointer;
-      list-style: none;
-    }
-    summary::-webkit-details-marker { display: none; }
-    .main details { border-color: var(--accent-main); }
-    .tips details { background: var(--tips-bg); border-color: var(--accent-tips); }
-    .action {
-      margin: 0.5rem 0 0 1rem;
-      font-size: 0.95rem;
-    }
+    body { margin:0; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background:var(--main-bg); color:var(--text); }
+    nav { position:sticky; top:0; background:var(--nav-bg); padding:0.75rem; display:flex; flex-wrap:wrap; justify-content:space-around; z-index:100; }
+    nav a { color:var(--nav-text); text-decoration:none; font-weight:bold; font-size:1rem; margin:0.25rem; }
+    section { padding:1rem; }
+    h2 { margin-top:0; }
+    details { background:var(--item-bg); border-left:4px solid; border-radius:0.5rem; margin-bottom:0.75rem; box-shadow:0 1px 3px rgba(0,0,0,0.1); padding:0.5rem 1rem; }
+    details[open] { padding-bottom:0.75rem; }
+    summary { font-weight:600; cursor:pointer; list-style:none; }
+    summary::-webkit-details-marker { display:none; }
+    .main details { border-color:var(--accent-main); }
+    .tips details { background:var(--tips-bg); border-color:var(--accent-tips); }
+    .menu details { border-color:var(--accent-menu); }
+    .enc details { border-color:var(--accent-enc); }
+    .step details { border-color:var(--accent-step); }
+    .fx details { border-color:var(--accent-fx); }
+    .tape details { border-color:var(--accent-tape); }
+    .scn details { border-color:var(--accent-scn); }
+    .misc details { border-color:var(--accent-misc); }
+    .action { margin:0.5rem 0 0 1rem; font-size:0.95rem; }
   </style>
 </head>
 <body>
   <nav>
-    <a href="#main">Cheat Sheet</a>
+    <a href="#main">Cheat</a>
     <a href="#tips">Tips</a>
+    <a href="#menu">Menu</a>
+    <a href="#enc">Encoders</a>
+    <a href="#step">Steps</a>
+    <a href="#fx">FX</a>
+    <a href="#tape">Tape</a>
+    <a href="#scn">Scenarios</a>
+    <a href="#misc">Misc</a>
   </nav>
+
   <section id="main" class="main">
     <h2>Cheat Sheet</h2>
-    <details><summary>select a bar</summary><div class="action">PRESS bar and it will advance to the next bar</div></details>
+       <details><summary>select a bar</summary><div class="action">PRESS bar and it will advance to the next bar</div></details>
     <details><summary>what's the current bar?</summary><div class="action">hold bar while in play</div></details>
     <details><summary>Selectively delete with bar</summary><div class="action">HOLD bar and see options, clear notes or clear parameter lock or clear all</div></details>
     <details><summary>deletes current track</summary><div class="action">record + stop</div></details>
@@ -116,6 +100,7 @@
     <details><summary>add step component</summary><div class="action">HOLD Shift + PRESS step (step flashes) + PRESS step component & choose value</div></details>
     <details><summary>edit current step component</summary><div class="action">HOLD shift > steps with components bright > press bright step > step flashes > shows assignment > remove and add back > confirm settings</div></details>
   </section>
+
   <section id="tips" class="tips">
     <h2>Tips</h2>
     <details><summary>Pad not playing correctly?</summary><div class="action">Remove velocity in instrument menu</div></details>
@@ -158,6 +143,98 @@
     <details><summary>G-Force modulation</summary><div class="action">Set in LFO, shake device</div></details>
     <details><summary>Value waveform</summary><div class="action">Click encoder to change wave shape</div></details>
     <details><summary>Pitchbend control</summary><div class="action">Mod Settings (Shift + Instrument) > Pitchbend Target</div></details>
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Menu Access</h2>
+    <details><summary>Access Instrument Menu</summary><div class="action">Instrument active, Hold Shift + Instrument</div></details>
+    <details><summary>Instrument Menu</summary><div class="action">Select instrument, Hold Shift + press/release Instrument</div></details>
+    <details><summary>Players Menu</summary><div class="action">Shift + Players button</div></details>
+    <details><summary>Play Mode Menu</summary><div class="action">M2, hold Shift</div></details>
+    <details><summary>Track Send Menu</summary><div class="action">M3, Hold Shift</div></details>
+    <details><summary>LFO Menu</summary><div class="action">M4</div></details>
+    <details><summary>Tuning options</summary><div class="action">Instrument, Shift + Instrument</div></details>
+    <details><summary>User Note (Global Transpose)</summary><div class="action">In Instrument menu: Tuning > User1 + M4</div></details>
+  </section>
+
+  <section id="enc" class="enc">
+    <h2>Encoder Parameters</h2>
+    <details><summary>Bar Menu Encoders</summary><div class="action">Quantization, Length, Groove, Shape</div></details>
+    <details><summary>Standard Encoders</summary><div class="action">Rate, Pattern, Octaves / Shift: Note Length, Variation, etc.</div></details>
+    <details><summary>Maestro Encoders</summary><div class="action">Roll, Variations, -, Hold</div></details>
+    <details><summary>Dissolve Encoders</summary><div class="action">Swarm, AM, FM, Detune</div></details>
+    <details><summary>EPiano Encoders</summary><div class="action">Tone, Texture, Punch, Time</div></details>
+    <details><summary>Hardsync Encoders</summary><div class="action">Freq, Sub, Noise, Lowcut</div></details>
+    <details><summary>Organ Encoders</summary><div class="action">Organ Type, Suboscillator, Tremolo Amt, Tremolo Rate</div></details>
+    <details><summary>Prism Encoders</summary><div class="action">Shape, Ratio, Detune, Stereo</div></details>
+    <details><summary>Simple Encoders</summary><div class="action">Shape, Pulse Width, Noise, Stereo</div></details>
+    <details><summary>Wavetable Encoders</summary><div class="action">Alter Table, Position, Warp, Drift</div></details>
+    <details><summary>Mixer Encoders</summary><div class="action">FX I, FX II, Pan, Level</div></details>
+    <details><summary>Master EQ</summary><div class="action">Low, Mid, High, All (M2)</div></details>
+    <details><summary>Drum Engine Encoders</summary><div class="action">Tune, Sample Start/End, Play Mode / Shift: Direction, Pan, Fade, Gain</div></details>
+    <details><summary>Multisampler Encoders</summary><div class="action">Sample Start/End, Loop Start/End / Shift: Direction, Tune, Crossfade, Gain</div></details>
+  </section>
+
+  <section id="step" class="step">
+    <h2>Step Components</h2>
+    <details><summary>Multiply</summary><div class="action">Retriggers note while keeping sync</div></details>
+    <details><summary>Velocity (Accent)</summary><div class="action">Set velocity on steps to create accents</div></details>
+    <details><summary>Ramp Up / Down</summary><div class="action">Progressively steps within scale</div></details>
+    <details><summary>Random</summary><div class="action">Randomly selects note within scale constraints</div></details>
+    <details><summary>Portamento (Global)</summary><div class="action">Instrument > M2 > Shift to enable</div></details>
+    <details><summary>Portamento (Step Component)</summary><div class="action">Component controls portamento on step</div></details>
+    <details><summary>Pitch Bend</summary><div class="action">Automated bend component like swoop up/down</div></details>
+    <details><summary>Transpose Tonality</summary><div class="action">Fixed interval transpose; respects quantize</div></details>
+    <details><summary>Jump</summary><div class="action">Jump to selected step; adds variation</div></details>
+    <details><summary>Skip Trigger Component</summary><div class="action">Trigger step every X bars</div></details>
+    <details><summary>Skip Step Component</summary><div class="action">Skip selected steps selectively</div></details>
+    <details><summary>Skip Parameter Lock Component</summary><div class="action">Skip parameter locks every X bars</div></details>
+  </section>
+
+  <section id="fx" class="fx">
+    <h2>FX Parameters</h2>
+    <details><summary>Chorus</summary><div class="action">Rate / Depth / Feedback / Stereo</div></details>
+    <details><summary>Delay</summary><div class="action">Size / Fine / Feedback / Dry</div></details>
+    <details><summary>Distortion</summary><div class="action">Drive / Clip / Low-Cut / High-Cut</div></details>
+    <details><summary>Lofi</summary><div class="action">Rate / Bits / Quality / Drift</div></details>
+    <details><summary>Phaser</summary><div class="action">Frequency / Depth / Rate / Feedback</div></details>
+    <details><summary>Reverb</summary><div class="action">Size / Mod / Tone / Dry-Wet</div></details>
+  </section>
+
+  <section id="tape" class="tape">
+    <h2>Tape Modules (M1–M4)</h2>
+    <details><summary>M1</summary><div class="action">Tape UI</div></details>
+    <details><summary>M2</summary><div class="action">Audio Send</div></details>
+    <details><summary>M3</summary><div class="action">Filter</div></details>
+    <details><summary>M4</summary><div class="action">LFO</div></details>
+    <details><summary>Loop Section</summary><div class="action">Select what to loop</div></details>
+  </section>
+
+  <section id="scn" class="scn">
+    <h2>Scenarios / Use</h2>
+    <details><summary>Add steps to existing pattern</summary><div class="action">Hold key, press/release record</div></details>
+    <details><summary>Build bars with patterns</summary><div class="action">Bar + Plus (new), Bar + Shift + Plus (copy)</div></details>
+    <details><summary>Add parameter lock (live)</summary><div class="action">Record + Turn encoder</div></details>
+    <details><summary>Add parameter lock (static)</summary><div class="action">Hold step + Turn encoder</div></details>
+    <details><summary>Add Fill Punch-In FX</summary><div class="action">Aux 2 track, add fill steps manually</div></details>
+    <details><summary>Stop Reverb/Delay Tail</summary><div class="action">Double Press Stop</div></details>
+    <details><summary>Syncopation / Polyrhythm</summary><div class="action">Use uneven bar lengths, odd scales</div></details>
+    <details><summary>Arpeggio Burst</summary><div class="action">Short arpeggio bursts for punch effect</div></details>
+    <details><summary>Velocity/Bend Step Control</summary><div class="action">Use blank steps with velocity/bend</div></details>
+    <details><summary>Brain Live Use</summary><div class="action">Link tracks to alter emphasis live</div></details>
+    <details><summary>External Track Use</summary><div class="action">Shift + M1 > External; set up MIDI</div></details>
+    <details><summary>Tape without Drums</summary><div class="action">M3 encoder to 'no send'</div></details>
+    <details><summary>Mixer Scene Delete</summary><div class="action">Delete queues next scene</div></details>
+    <details><summary>Clear All Scenes</summary><div class="action">Delete last scene keeps it active</div></details>
+  </section>
+
+  <section id="misc" class="misc">
+    <h2>Misc Menus & Actions</h2>
+    <details><summary>External Effects Send</summary><div class="action">Instrument M3 > Shift</div></details>
+    <details><summary>COM Mode / Bluetooth MIDI</summary><div class="action">COM > M3</div></details>
+    <details><summary>MIDI Controller Mode (Exit)</summary><div class="action">Shift + COM</div></details>
+    <details><summary>MTP File Transfer</summary><div class="action">USB connection</div></details>
+    <details><summary>Firmware Update</summary><div class="action">Web MIDI or Boot Mode</div></details>
   </section>
 </body>
 </html>
