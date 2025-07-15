@@ -4,51 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OP–XY Cheat Sheet</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.4;
-      padding: 1rem;
-      background: #fafafa;
-      color: #333;
+<!-- CSS: place this inside your <head> -->
+<style>
+  :root {
+    --bg-page: #eef8fa;
+    --bg-item: #ffffff;
+    --accent-color: #4da6ff;
+    --text-base: #1a3c40;
+    --text-muted: #2a2a2a;
+  }
+
+  .tips-container {
+    padding: 1rem;
+    background: var(--bg-page);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .tips-container .item {
+    background: var(--bg-item);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .tips-container .desc {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--text-base);
+  }
+
+  .tips-container .action {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  @media (min-width: 600px) {
+    .tips-container .item {
+      flex-direction: row;
+      align-items: center;
     }
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    .tips-container .desc {
+      width: 35%;
+      font-size: 1.05rem;
     }
-    .item {
-      padding: 0.75rem;
-      background: #fff;
-      border-radius: 0.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
+    .tips-container .action {
+      width: 65%;
     }
-    .desc {
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    .action {
-      font-size: 0.95rem;
-      color: #555;
-    }
-    @media (min-width: 600px) {
-      .item {
-        flex-direction: row;
-        align-items: center;
-      }
-      .desc {
-        width: 35%;
-        font-size: 1.05rem;
-      }
-      .action {
-        width: 65%;
-      }
-    }
-  </style>
+  }
+</style>
+
 </head>
 <body>
   <div class="container">
@@ -95,6 +105,170 @@
     <div class="item"><div class="desc">edit current step component</div><div class="action">HOLD shift &gt; steps with components bright &gt; press bright step &gt; step flashes &gt; shows assignment &gt; remove & add back &gt; confirm settings</div></div>
   </div>
 </body>
+  <!-- HTML: paste this where you want your Tips list -->
+<div class="tips-container">
+  <div class="item">
+    <div class="desc">Pad not playing correctly?</div>
+    <div class="action">Remove velocity in instrument menu</div>
+  </div>
+  <div class="item">
+    <div class="desc">Each track’s bars are independent</div>
+    <div class="action">Adding bars to one track does not affect others</div>
+  </div>
+  <div class="item">
+    <div class="desc">Punch-in FX (upper vs. lower octaves)</div>
+    <div class="action">Upper = synth/sample, Lower = percussion</div>
+  </div>
+  <div class="item">
+    <div class="desc">Last three (middle of three) are g-force sensitive</div>
+    <div class="action">No action, informational</div>
+  </div>
+  <div class="item">
+    <div class="desc">Switching between pages</div>
+    <div class="action">Press bar to page between bars</div>
+  </div>
+  <div class="item">
+    <div class="desc">Think about resolution</div>
+    <div class="action">8 bars = detailed, 1024 = better for chords</div>
+  </div>
+  <div class="item">
+    <div class="desc">Pulse component can desync sequencer</div>
+    <div class="action">Sync with Jump component (set Jump to 9)</div>
+  </div>
+  <div class="item">
+    <div class="desc">Using Pulse without Jump</div>
+    <div class="action">Will desync playhead</div>
+  </div>
+  <div class="item">
+    <div class="desc">Pulse vs Multiply</div>
+    <div class="action">Pulse = adds notes, Multiply = divides steps</div>
+  </div>
+  <div class="item">
+    <div class="desc">Step component velocity random</div>
+    <div class="action">Use for accents; tied to instrument-menu velocity (Shift + Instrument)</div>
+  </div>
+  <div class="item">
+    <div class="desc">Dial in best sound</div>
+    <div class="action">Add notes, play sequence, audition instruments</div>
+  </div>
+  <div class="item">
+    <div class="desc">Trigger types explanation</div>
+    <div class="action">Skip triggers are confusing—experiment with button combos</div>
+  </div>
+  <div class="item">
+    <div class="desc">Skip Trigger Component</div>
+    <div class="action">Triggers entire step once per cycle</div>
+  </div>
+  <div class="item">
+    <div class="desc">Skip Step Component</div>
+    <div class="action">Skips step components</div>
+  </div>
+  <div class="item">
+    <div class="desc">Skip Parameter Lock Component</div>
+    <div class="action">Skips parameter locks</div>
+  </div>
+  <div class="item">
+    <div class="desc">Combining Skip + Jump</div>
+    <div class="action">Use Shift + select step, assign Jump, option 8</div>
+  </div>
+  <div class="item">
+    <div class="desc">Flourish sound effect</div>
+    <div class="action">Combine Ramp with Multiply</div>
+  </div>
+  <div class="item">
+    <div class="desc">Parameter lock</div>
+    <div class="action">Hold target step, turn knob</div>
+  </div>
+  <div class="item">
+    <div class="desc">Players menu access</div>
+    <div class="action">Shift + Players button</div>
+  </div>
+  <div class="item">
+    <div class="desc">Players types</div>
+    <div class="action">Arpeggio, Maestro, Hold</div>
+  </div>
+  <div class="item">
+    <div class="desc">Maestro use case example</div>
+    <div class="action">Pick Maestro, 6-note sequence, adjust settings</div>
+  </div>
+  <div class="item">
+    <div class="desc">Add chord to Maestro</div>
+    <div class="action">Shift + Play chord</div>
+  </div>
+  <div class="item">
+    <div class="desc">Hold in Players</div>
+    <div class="action">Hold sustains pads</div>
+  </div>
+  <div class="item">
+    <div class="desc">Project saves</div>
+    <div class="action">Save = snapshot in history</div>
+  </div>
+  <div class="item">
+    <div class="desc">Duplicate project</div>
+    <div class="action">Use duplicate for templates</div>
+  </div>
+  <div class="item">
+    <div class="desc">Project delete</div>
+    <div class="action">Unforgiving, no undo</div>
+  </div>
+  <div class="item">
+    <div class="desc">Project config settings</div>
+    <div class="action">Per project</div>
+  </div>
+  <div class="item">
+    <div class="desc">Transpose for tuning</div>
+    <div class="action">Project Settings > Config > General > Global > Transpose</div>
+  </div>
+  <div class="item">
+    <div class="desc">Time Signature</div>
+    <div class="action">Tempo + Signature (affects quantize/metronome)</div>
+  </div>
+  <div class="item">
+    <div class="desc">Grooves setting</div>
+    <div class="action">Adjust graph under metronome</div>
+  </div>
+  <div class="item">
+    <div class="desc">Voices explanation</div>
+    <div class="action">Assign per instrument; details unclear on MIDI</div>
+  </div>
+  <div class="item">
+    <div class="desc">Granular tempo</div>
+    <div class="action">Shift + Adjust Tempo</div>
+  </div>
+  <div class="item">
+    <div class="desc">Grooves count</div>
+    <div class="action">11 total, some behind Shift</div>
+  </div>
+  <div class="item">
+    <div class="desc">Engine menu access</div>
+    <div class="action">Instrument > Shift + M1</div>
+  </div>
+  <div class="item">
+    <div class="desc">Link tracks</div>
+    <div class="action">Hold source track, press track to link</div>
+  </div>
+  <div class="item">
+    <div class="desc">Instrument Envelope (ADSR)</div>
+    <div class="action">Learn ADSR for shaping sound</div>
+  </div>
+  <div class="item">
+    <div class="desc">Mic as input</div>
+    <div class="action">Slide finger; LFO knob selects parameter</div>
+  </div>
+  <div class="item">
+    <div class="desc">G-Force modulation</div>
+    <div class="action">Set in LFO, shake device</div>
+  </div>
+  <div class="item">
+    <div class="desc">Value waveform</div>
+    <div class="action">Click encoder to change wave shape</div>
+  </div>
+  <div class="item">
+    <div class="desc">Pitchbend control</div>
+    <div class="action">Mod Settings (Shift + Instrument) > Pitchbend Target</div>
+  </div>
+</div>
+
 </html>
 
 
