@@ -3,313 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OP–XY Mobile Cheat Sheets</title>
+  <title>OP–XY Cheat Sheet</title>
   <style>
     :root {
-      --main-bg-page: #ffffff;
-      --main-bg-item: #f9f3e7;
-      --main-accent: #ff7043;
-      --main-text: #4e342e;
-      --main-text-muted: #6d4c41;
-      --tips-bg-page: #eef8fa;
-      --tips-bg-item: #ffffff;
-      --tips-accent: #4da6ff;
-      --tips-text: #1a3c40;
-      --tips-text-muted: #2a2a2a;
+      --nav-bg: #333;
+      --nav-text: #fff;
+      --main-bg: #f9f3e7;
+      --tips-bg: #eef8fa;
+      --item-bg: #fff;
+      --accent-main: #ff7043;
+      --accent-tips: #4da6ff;
+      --text: #333;
     }
     body {
       margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.4;
-      background: var(--main-bg-page);
-      color: var(--main-text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--main-bg);
+      color: var(--text);
     }
-    .container, .tips-container {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .container {
-      background: var(--main-bg-page);
-    }
-    .tips-container {
-      background: var(--tips-bg-page);
-      margin-top: 2rem;
-    }
-    .item {
-      background: var(--main-bg-item);
-      border-left: 4px solid var(--main-accent);
-      border-radius: 0.5rem;
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--nav-bg);
       padding: 0.75rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
       display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
+      justify-content: space-around;
+      z-index: 100;
     }
-    .desc {
-      font-weight: 600;
+    nav a {
+      color: var(--nav-text);
+      text-decoration: none;
+      font-weight: bold;
       font-size: 1rem;
-      color: var(--main-text);
     }
+    section {
+      padding: 1rem;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    details {
+      background: var(--item-bg);
+      border-left: 4px solid;
+      border-radius: 0.5rem;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 0.5rem 1rem;
+    }
+    details[open] {
+      padding-bottom: 0.75rem;
+    }
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    .main details { border-color: var(--accent-main); }
+    .tips details { background: var(--tips-bg); border-color: var(--accent-tips); }
     .action {
+      margin: 0.5rem 0 0 1rem;
       font-size: 0.95rem;
-      color: var(--main-text-muted);
-    }
-    .tips-container .item {
-      background: var(--tips-bg-item);
-      border-left: 4px solid var(--tips-accent);
-      color: var(--tips-text);
-    }
-    .tips-container .desc {
-      color: var(--tips-text);
-    }
-    .tips-container .action {
-      color: var(--tips-text-muted);
-    }
-    @media (min-width: 600px) {
-      .item {
-        flex-direction: row;
-        align-items: center;
-      }
-      .desc {
-        width: 35%;
-        font-size: 1.05rem;
-      }
-      .action {
-        width: 65%;
-      }
     }
   </style>
 </head>
 <body>
-  <main>
-    <section class="container">
-      <h1>OP–XY Cheat Sheet</h1>
-      <div class="item"><div class="desc">Select a bar</div><div class="action">Press bar and it will advance to the next bar</div></div>
-      <div class="item"><div class="desc">What's the current bar?</div><div class="action">Hold bar while in play</div></div>
-      <div class="item"><div class="desc">Selectively delete with bar</div><div class="action">Hold bar and see options: clear notes, clear parameter lock, or clear all</div></div>
-      <div class="item"><div class="desc">Delete current track</div><div class="action">Record + Stop</div></div>
-      <div class="item"><div class="desc">Hold a step to check/edit notes or add a chord</div><div class="action">Hold a step</div></div>
-      <div class="item"><div class="desc">Extend the note</div><div class="action">Hold a step and press another step</div></div>
-      <div class="item"><div class="desc">Nudge the note</div><div class="action">Hold a step and press PLUS or MINUS (quantization off)</div></div>
-      <div class="item"><div class="desc">Show notes</div><div class="action">Hold a key and press Record, or press Step</div></div>
-      <div class="item"><div class="desc">Lock a parameter</div><div class="action">Hold a step and adjust a knob</div></div>
-      <div class="item"><div class="desc">What number step is that?</div><div class="action">Hold the step and the number will show</div></div>
-      <div class="item"><div class="desc">Last note</div><div class="action">Last note played gets assigned to select steps</div></div>
-      <div class="item"><div class="desc">Add step component to step</div><div class="action">Record note to step or Shift + step (step flashes)</div></div>
-      <div class="item"><div class="desc">Shift + lit step</div><div class="action">If it dims, no component. If it doesn't dim, has a component.</div></div>
-      <div class="item"><div class="desc">Where are the step components assigned to this pattern?</div><div class="action">Shift + lit step to see (dim = none, lit = component exists)</div></div>
-      <div class="item"><div class="desc">Add step component and choose setting</div><div class="action">Shift + step (blinks), keep holding shift, choose component, confirm value</div></div>
-      <div class="item"><div class="desc">What component is on this step?</div><div class="action">Hold Shift + press & release non-dim step to see component</div></div>
-      <div class="item"><div class="desc">Edit note</div><div class="action">Hold note, select new note, add old note back if desired</div></div>
-      <div class="item"><div class="desc">Add parameter lock</div><div class="action">Hold target step - turn knob</div></div>
-      <div class="item"><div class="desc">Arpeggios</div><div class="action">Hold note/chord, turn white encoder</div></div>
-      <div class="item"><div class="desc">Add new chord for maestro</div><div class="action">Shift and play chord</div></div>
-      <div class="item"><div class="desc">Granular tempo</div><div class="action">Shift + adjust tempo</div></div>
-      <div class="item"><div class="desc">Link tracks</div><div class="action">Hold the source track, press track to be linked</div></div>
-      <div class="item"><div class="desc">Filter (instrument)</div><div class="action">M3: click dark gray for type, mid-gray encoder for resonance</div></div>
-      <div class="item"><div class="desc">Copy preset</div><div class="action">Hold track, select copy via M1-4, release, hold destination track, paste</div></div>
-      <div class="item"><div class="desc">Save preset</div><div class="action">Hold track, select save (saved in category > snapshots)</div></div>
-      <div class="item"><div class="desc">Multi-out jack</div><div class="action">Select COM, light gray encoder for output type</div></div>
-      <div class="item"><div class="desc">Add an effect to a track</div><div class="action">Select track, Aux > FX, adjust send via M2, click encoder</div></div>
-      <div class="item"><div class="desc">Press arrange again to see Aux track</div><div class="action">Press arrange again</div></div>
-      <div class="item"><div class="desc">Mute and unmute tracks</div><div class="action">Click encoder, hold shift + track, hold instrument + track</div></div>
-      <div class="item"><div class="desc">Solo track while playing</div><div class="action">Hold down track</div></div>
-      <div class="item"><div class="desc">Change scene</div><div class="action">Hold Shift + 2 = scene 2</div></div>
-      <div class="item"><div class="desc">Song mode</div><div class="action">Arrange > hold shift + arrange again, type scene chain</div></div>
-      <div class="item"><div class="desc">Mix mode</div><div class="action">Hold down track to solo</div></div>
-      <div class="item"><div class="desc">Mute tracks while staying on the mixer</div><div class="action">Mix mode, hold shift + track</div></div>
-      <div class="item"><div class="desc">Hitting Mixer twice</div><div class="action">Gets you to Aux track mode</div></div>
-      <div class="item"><div class="desc">Getting to sampler engine</div><div class="action">Instrument selected, hold Shift + M1</div></div>
-      <div class="item"><div class="desc">Load a sample</div><div class="action">Shift + Sampler</div></div>
-      <div class="item"><div class="desc">Save a preset</div><div class="action">Hold track, select M4 : save</div></div>
-      <div class="item"><div class="desc">See what's on a step</div><div class="action">Hold step > assigned keys light</div></div>
-      <div class="item"><div class="desc">Add step component</div><div class="action">Hold Shift + press step (step flashes) + press step component & choose value</div></div>
-      <div class="item"><div class="desc">Edit current step component</div><div class="action">Hold shift > steps with components bright > press bright step > step flashes > shows assignment > remove as needed</div></div>
-    </section>
-        <section class="container">
-<!-- TIPS SECTION -->
-<div class="tips-container">
-  <div class="item">
-    <div class="desc">Pad not playing correctly?</div>
-    <div class="action">Remove velocity in instrument menu</div>
-  </div>
-  <div class="item">
-    <div class="desc">Each track’s bars are independent</div>
-    <div class="action">Adding bars to one track does not affect others</div>
-  </div>
-  <div class="item">
-    <div class="desc">Punch-in FX (upper vs. lower octaves)</div>
-    <div class="action">Upper = synth/sample, Lower = percussion</div>
-  </div>
-  <div class="item">
-    <div class="desc">Last three (middle of three) are g-force sensitive</div>
-    <div class="action">No action, informational</div>
-  </div>
-  <div class="item">
-    <div class="desc">Switching between pages</div>
-    <div class="action">Press bar to page between bars</div>
-  </div>
-  <div class="item">
-    <div class="desc">Think about resolution</div>
-    <div class="action">8 bars = detailed, 1024 = better for chords</div>
-  </div>
-  <div class="item">
-    <div class="desc">Pulse component can desync sequencer</div>
-    <div class="action">Sync with Jump component (set Jump to 9)</div>
-  </div>
-  <div class="item">
-    <div class="desc">Using Pulse without Jump</div>
-    <div class="action">Will desync playhead</div>
-  </div>
-  <div class="item">
-    <div class="desc">Pulse vs Multiply</div>
-    <div class="action">Pulse = adds notes, Multiply = divides steps</div>
-  </div>
-  <div class="item">
-    <div class="desc">Step component velocity random</div>
-    <div class="action">Use for accents, ties to velocity in instrument menu (Shift + Instrument)</div>
-  </div>
-  <div class="item">
-    <div class="desc">Dial in best sound</div>
-    <div class="action">Add notes, play sequence, audition instruments</div>
-  </div>
-  <div class="item">
-    <div class="desc">Trigger types explanation</div>
-    <div class="action">Skip triggers are confusing, experiment with buttons</div>
-  </div>
-  <div class="item">
-    <div class="desc">Skip Trigger Component</div>
-    <div class="action">Triggers entire step once per cycle</div>
-  </div>
-  <div class="item">
-    <div class="desc">Skip Step Component</div>
-    <div class="action">Skips step components</div>
-  </div>
-  <div class="item">
-    <div class="desc">Skip Parameter Lock Component</div>
-    <div class="action">Skips parameter locks</div>
-  </div>
-  <div class="item">
-    <div class="desc">Combining Skip + Jump</div>
-    <div class="action">Use Shift + select step, assign Jump, option 8</div>
-  </div>
-  <div class="item">
-    <div class="desc">Flourish sound effect</div>
-    <div class="action">Combine Ramp with Multiply</div>
-  </div>
-  <div class="item">
-    <div class="desc">Parameter lock</div>
-    <div class="action">Hold target step, turn knob</div>
-  </div>
-  <div class="item">
-    <div class="desc">Players menu access</div>
-    <div class="action">Shift + Players button</div>
-  </div>
-  <div class="item">
-    <div class="desc">Players types</div>
-    <div class="action">Arpeggio, Maestro, Hold</div>
-  </div>
-  <div class="item">
-    <div class="desc">Maestro use case example</div>
-    <div class="action">Pick Maestro, 6-note sequence, adjust settings</div>
-  </div>
-  <div class="item">
-    <div class="desc">Add chord to Maestro</div>
-    <div class="action">Shift + Play chord</div>
-  </div>
-  <div class="item">
-    <div class="desc">Hold in Players</div>
-    <div class="action">Hold sustains pads</div>
-  </div>
-  <div class="item">
-    <div class="desc">Project saves</div>
-    <div class="action">Save = snapshot in history</div>
-  </div>
-  <div class="item">
-    <div class="desc">Duplicate project</div>
-    <div class="action">Use duplicate for templates</div>
-  </div>
-  <div class="item">
-    <div class="desc">Project delete</div>
-    <div class="action">Unforgiving, no undo</div>
-  </div>
-  <div class="item">
-    <div class="desc">Project config settings</div>
-    <div class="action">Per project</div>
-  </div>
-  <div class="item">
-    <div class="desc">Transpose for tuning</div>
-    <div class="action">Project Settings > Config > General > Global > Transpose</div>
-  </div>
-  <div class="item">
-    <div class="desc">Time Signature</div>
-    <div class="action">Tempo + Signature (affects quantize/metronome)</div>
-  </div>
-  <div class="item">
-    <div class="desc">Grooves setting</div>
-    <div class="action">Adjust graph under metronome</div>
-  </div>
-  <div class="item">
-    <div class="desc">Voices explanation</div>
-    <div class="action">Assign per instrument; details unclear on MIDI</div>
-  </div>
-  <div class="item">
-    <div class="desc">Granular tempo</div>
-    <div class="action">Shift + Adjust Tempo</div>
-  </div>
-  <div class="item">
-    <div class="desc">Grooves count</div>
-    <div class="action">11 total, some behind Shift</div>
-  </div>
-  <div class="item">
-    <div class="desc">Engine menu access</div>
-    <div class="action">Instrument > Shift + M1</div>
-  </div>
-  <div class="item">
-    <div class="desc">Link tracks</div>
-    <div class="action">Hold source track, press track to link</div>
-  </div>
-  <div class="item">
-    <div class="desc">Instrument Envelope (ADSR)</div>
-    <div class="action">Learn ADSR for shaping sound</div>
-  </div>
-  <div class="item">
-    <div class="desc">Mic as input</div>
-    <div class="action">Slide finger; LFO knob selects parameter</div>
-  </div>
-  <div class="item">
-    <div class="desc">G-Force modulation</div>
-    <div class="action">Set in LFO, shake device</div>
-  </div>
-  <div class="item">
-    <div class="desc">Value waveform</div>
-    <div class="action">Click encoder to change wave shape</div>
-  </div>
-  <div class="item">
-    <div class="desc">Pitchbend control</div>
-    <div class="action">Mod Settings (Shift + Instrument) > Pitchbend Target</div>
-  </div>
-</div>
-
-    </section>
-    <!-- You can add a tips section or other sections here if desired -->
-    <!-- Example:
-    <section class="tips-container">
-      <h2>Tips</h2>
-      <div class="item"><div class="desc">Pad not playing right?</div><div class="action">Remove velocity in instrument menu</div></div>
-      ...
-    </section>
-    -->
-  </main>
+  <nav>
+    <a href="#main">Cheat Sheet</a>
+    <a href="#tips">Tips</a>
+  </nav>
+  <section id="main" class="main">
+    <h2>Cheat Sheet</h2>
+    <details><summary>select a bar</summary><div class="action">PRESS bar and it will advance to the next bar</div></details>
+    <details><summary>what's the current bar?</summary><div class="action">hold bar while in play</div></details>
+    <details><summary>Selectively delete with bar</summary><div class="action">HOLD bar and see options, clear notes or clear parameter lock or clear all</div></details>
+    <details><summary>deletes current track</summary><div class="action">record + stop</div></details>
+    <details><summary>Hold a Step to check/edit notes or add a chord</summary><div class="action">Hold a Step</div></details>
+    <details><summary>extend the Note</summary><div class="action">Hold a Step and press another step</div></details>
+    <details><summary>nudge the note</summary><div class="action">Hold a Step and press PLUS or MINUS (quantization OFF!)</div></details>
+    <details><summary>show notes</summary><div class="action">Hold a key and press Record or press Step</div></details>
+    <details><summary>lock a parameter</summary><div class="action">Hold a step and adjust an encoder</div></details>
+    <details><summary>What number step is that?</summary><div class="action">HOLD the step and the number will show</div></details>
+    <details><summary>last note</summary><div class="action">Last note played gets assigned to select steps</div></details>
+    <details><summary>Add step component to step</summary><div class="action">Record note to step or Shift + step (step flashes)</div></details>
+    <details><summary>Shift + lit step</summary><div class="action">if it dims, no component. Does not dim, has a component.</div></details>
+    <details><summary>Where are the step components assigned to this pattern?</summary><div class="action">Shift + lit step to see (dim = none; lit = component exists)</div></details>
+    <details><summary>Add step component and choose setting</summary><div class="action">Shift + step (blinks), keep holding shift, choose component, confirm value</div></details>
+    <details><summary>One more time: what component is on this here step?</summary><div class="action">hold Shift + press & release non-dim step to see component</div></details>
+    <details><summary>Edit note</summary><div class="action">Hold note, select new note, add old note back if desired</div></details>
+    <details><summary>Add parameter lock</summary><div class="action">hold target step - turn knob</div></details>
+    <details><summary>Arpeggios</summary><div class="action">hold note/chord, turn white encoder</div></details>
+    <details><summary>Add new chord for maestro</summary><div class="action">shift and play chord</div></details>
+    <details><summary>Granular tempo</summary><div class="action">shift + adjust tempo</div></details>
+    <details><summary>link tracks</summary><div class="action">hold the source track, press track to be linked</div></details>
+    <details><summary>Filter (instrument)</summary><div class="action">M3: click dark gray for type, mid-gray encoder for resonance</div></details>
+    <details><summary>Copy preset</summary><div class="action">hold track, select copy via M1-4, release, hold destination track, paste</div></details>
+    <details><summary>Save Preset</summary><div class="action">hold track, select save (saved in category>snapshots)</div></details>
+    <details><summary>Multi-out jack</summary><div class="action">Select COM, light gray encoder for output type</div></details>
+    <details><summary>Adding an effect to a track</summary><div class="action">Select track, Aux > FX, adjust send via M2, click encoder</div></details>
+    <details><summary>...press arrange again to see Aux track</summary><div class="action">press arrange again</div></details>
+    <details><summary>Mute and unmute tracks</summary><div class="action">Click encoder, HOLD shift + track, HOLD instrument + track</div></details>
+    <details><summary>Solo track while playing</summary><div class="action">Hold down track</div></details>
+    <details><summary>Change scene</summary><div class="action">HOLD Shift + 2 = scene 2</div></details>
+    <details><summary>Song Mode</summary><div class="action">Arrange > hold shift + arrange again, type scene chain</div></details>
+    <details><summary>Mix mode</summary><div class="action">hold down track to solo</div></details>
+    <details><summary>Mute tracks while staying on the mixer</summary><div class="action">Mix mode, HOLD shift + track</div></details>
+    <details><summary>Hitting Mixer twice</summary><div class="action">gets you to Aux track mode</div></details>
+    <details><summary>getting to sampler engine</summary><div class="action">instrument selected, hold SHIFT + M1</div></details>
+    <details><summary>load a sample</summary><div class="action">SHIFT + SAMPLER</div></details>
+    <details><summary>Save a preset</summary><div class="action">Hold track, select M4 : save</div></details>
+    <details><summary>see what's on a step</summary><div class="action">HOLD step > assigned keys light</div></details>
+    <details><summary>add step component</summary><div class="action">HOLD Shift + PRESS step (step flashes) + PRESS step component & choose value</div></details>
+    <details><summary>edit current step component</summary><div class="action">HOLD shift > steps with components bright > press bright step > step flashes > shows assignment > remove and add back > confirm settings</div></details>
+  </section>
+  <section id="tips" class="tips">
+    <h2>Tips</h2>
+    <details><summary>Pad not playing correctly?</summary><div class="action">Remove velocity in instrument menu</div></details>
+    <details><summary>Each track’s bars are independent</summary><div class="action">Adding bars to one track does not affect others</div></details>
+    <details><summary>Punch-in FX (upper vs. lower octaves)</summary><div class="action">Upper = synth/sample, Lower = percussion</div></details>
+    <details><summary>Last three (middle of three) are g-force sensitive</summary><div class="action">No action, informational</div></details>
+    <details><summary>Switching between pages</summary><div class="action">Press bar to page between bars</div></details>
+    <details><summary>Think about resolution</summary><div class="action">8 bars = detailed, 1024 = better for chords</div></details>
+    <details><summary>Pulse component can desync sequencer</summary><div class="action">Sync with Jump component (set Jump to 9)</div></details>
+    <details><summary>Using Pulse without Jump</summary><div class="action">Will desync playhead</div></details>
+    <details><summary>Pulse vs Multiply</summary><div class="action">Pulse = adds notes, Multiply = divides steps</div></details>
+    <details><summary>Step component velocity random</summary><div class="action">Use for accents, ties to velocity in instrument menu (Shift + Instrument)</div></details>
+    <details><summary>Dial in best sound</summary><div class="action">Add notes, play sequence, audition instruments</div></details>
+    <details><summary>Trigger types explanation</summary><div class="action">Skip triggers are confusing, experiment with buttons</div></details>
+    <details><summary>Skip Trigger Component</summary><div class="action">Triggers entire step once per cycle</div></details>
+    <details><summary>Skip Step Component</summary><div class="action">Skips step components</div></details>
+    <details><summary>Skip Parameter Lock Component</summary><div class="action">Skips parameter locks</div></details>
+    <details><summary>Combining Skip + Jump</summary><div class="action">Use Shift + select step, assign Jump, option 8</div></details>
+    <details><summary>Flourish sound effect</summary><div class="action">Combine Ramp with Multiply</div></details>
+    <details><summary>Parameter lock</summary><div class="action">Hold target step, turn knob</div></details>
+    <details><summary>Players menu access</summary><div class="action">Shift + Players button</div></details>
+    <details><summary>Players types</summary><div class="action">Arpeggio, Maestro, Hold</div></details>
+    <details><summary>Maestro use case example</summary><div class="action">Pick Maestro, 6-note sequence, adjust settings</div></details>
+    <details><summary>Add chord to Maestro</summary><div class="action">Shift + Play chord</div></details>
+    <details><summary>Hold in Players</summary><div class="action">Hold sustains pads</div></details>
+    <details><summary>Project saves</summary><div class="action">Save = snapshot in history</div></details>
+    <details><summary>Duplicate project</summary><div class="action">Use duplicate for templates</div></details>
+    <details><summary>Project delete</summary><div class="action">Unforgiving, no undo</div></details>
+    <details><summary>Project config settings</summary><div class="action">Per project</div></details>
+    <details><summary>Transpose for tuning</summary><div class="action">Project Settings > Config > General > Global > Transpose</div></details>
+    <details><summary>Time Signature</summary><div class="action">Tempo + Signature (affects quantize/metronome)</div></details>
+    <details><summary>Grooves setting</summary><div class="action">Adjust graph under metronome</div></details>
+    <details><summary>Voices explanation</summary><div class="action">Assign per instrument; details unclear on MIDI</div></details>
+    <details><summary>Granular tempo</summary><div class="action">Shift + Adjust Tempo</div></details>
+    <details><summary>Grooves count</summary><div class="action">11 total, some behind Shift</div></details>
+    <details><summary>Engine menu access</summary><div class="action">Instrument > Shift + M1</div></details>
+    <details><summary>Link tracks</summary><div class="action">Hold source track, press track to link</div></details>
+    <details><summary>Instrument Envelope (ADSR)</summary><div class="action">Learn ADSR for shaping sound</div></details>
+    <details><summary>Mic as input</summary><div class="action">Slide finger; LFO knob selects parameter</div></details>
+    <details><summary>G-Force modulation</summary><div class="action">Set in LFO, shake device</div></details>
+    <details><summary>Value waveform</summary><div class="action">Click encoder to change wave shape</div></details>
+    <details><summary>Pitchbend control</summary><div class="action">Mod Settings (Shift + Instrument) > Pitchbend Target</div></details>
+  </section>
 </body>
 </html>
-
-
-
-
-
