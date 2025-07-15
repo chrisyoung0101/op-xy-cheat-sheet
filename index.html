@@ -1,6 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP–XY Cheat Sheet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.4;
+      padding: 1rem;
+      background: #fafafa;
+      color: #333;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .item {
+      padding: 0.75rem;
+      background: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .desc {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .action {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    @media (min-width: 600px) {
+      .item {
+        flex-direction: row;
+        align-items: center;
+      }
+      .desc {
+        width: 35%;
+        font-size: 1.05rem;
+      }
+      .action {
+        width: 65%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item"><div class="desc">select a bar</div><div class="action">PRESS bar and it will advance to the next bar</div></div>
+    <div class="item"><div class="desc">what's the current bar?</div><div class="action">hold bar while in play</div></div>
+    <div class="item"><div class="desc">Selectively delete with bar</div><div class="action">HOLD bar and see options, clear notes or clear parameter lock or clear all</div></div>
+    <div class="item"><div class="desc">deletes current track</div><div class="action">record + stop</div></div>
+    <div class="item"><div class="desc">Hold a Step to check/edit notes or add a chord</div><div class="action">Hold a Step</div></div>
+    <div class="item"><div class="desc">extend the Note</div><div class="action">Hold a Step and press another step</div></div>
+    <div class="item"><div class="desc">nudge the note</div><div class="action">Hold a Step and press PLUS or MINUS (quantization OFF!)</div></div>
+    <div class="item"><div class="desc">show notes</div><div class="action">Hold a key and press Record or press Step</div></div>
+    <div class="item"><div class="desc">lock a parameter</div><div class="action">Hold a step and adjust an encoder</div></div>
+    <div class="item"><div class="desc">What number step is that?</div><div class="action">HOLD the step and the number will show</div></div>
+    <div class="item"><div class="desc">last note</div><div class="action">Last note played gets assigned to select steps</div></div>
+    <div class="item"><div class="desc">Add step component to step</div><div class="action">Record note to step or Shift + step (step flashes)</div></div>
+    <div class="item"><div class="desc">Shift + lit step</div><div class="action">if it dims, no component. Does not dim, has a component.</div></div>
+    <div class="item"><div class="desc">Where are the step components assigned?</div><div class="action">Shift + lit step to see (dim = none; lit = component exists)</div></div>
+    <div class="item"><div class="desc">Add step component and choose setting</div><div class="action">Shift + step (blinks), hold shift, choose component, confirm value</div></div>
+    <div class="item"><div class="desc">One more time: what component is on this step?</div><div class="action">hold Shift + press & release non-dim step to see component</div></div>
+    <div class="item"><div class="desc">Edit note</div><div class="action">Hold note, select new note, add old note back if desired</div></div>
+    <div class="item"><div class="desc">Add parameter lock</div><div class="action">hold target step - turn knob</div></div>
+    <div class="item"><div class="desc">Arpeggios</div><div class="action">hold note/chord, turn white encoder</div></div>
+    <div class="item"><div class="desc">Add new chord for maestro</div><div class="action">shift and play chord</div></div>
+    <div class="item"><div class="desc">Granular tempo</div><div class="action">shift + adjust tempo</div></div>
+    <div class="item"><div class="desc">link tracks</div><div class="action">hold the source track, press track to be linked</div></div>
+    <div class="item"><div class="desc">Filter (instrument)</div><div class="action">M3: click dark gray for type, mid-gray encoder for resonance</div></div>
+    <div class="item"><div class="desc">Copy preset</div><div class="action">hold track, select copy via M1-4, release, hold destination track, paste</div></div>
+    <div class="item"><div class="desc">Save Preset</div><div class="action">hold track, select save (saved in category&gt;snapshots)</div></div>
+    <div class="item"><div class="desc">Multi-out jack</div><div class="action">Select COM, light gray encoder for output type</div></div>
+    <div class="item"><div class="desc">Adding an effect to a track</div><div class="action">Select track, Aux &gt; FX, adjust send via M2, click encoder</div></div>
+    <div class="item"><div class="desc">...press arrange again to see Aux track</div><div class="action">press arrange again</div></div>
+    <div class="item"><div class="desc">Mute and unmute tracks</div><div class="action">Click encoder, HOLD shift + track, HOLD instrument + track</div></div>
+    <div class="item"><div class="desc">Solo track while playing</div><div class="action">Hold down track</div></div>
+    <div class="item"><div class="desc">Change scene</div><div class="action">HOLD Shift + 2 = scene 2</div></div>
+    <div class="item"><div class="desc">Song Mode</div><div class="action">Arrange &gt; hold shift + arrange again, type scene chain</div></div>
+    <div class="item"><div class="desc">Mix mode</div><div class="action">hold down track to solo</div></div>
+    <div class="item"><div class="desc">Mute tracks while staying on the mixer</div><div class="action">Mix mode, HOLD shift + track</div></div>
+    <div class="item"><div class="desc">Hitting Mixer twice</div><div class="action">gets you to Aux track mode</div></div>
+    <div class="item"><div class="desc">getting to sampler engine</div><div class="action">instrument selected, hold SHIFT + M1</div></div>
+    <div class="item"><div class="desc">load a sample</div><div class="action">SHIFT + SAMPLER</div></div>
+    <div class="item"><div class="desc">Save a preset</div><div class="action">Hold track, select M4 : save</div></div>
+    <div class="item"><div class="desc">see what's on a step</div><div class="action">HOLD step > assigned keys light</div></div>
+    <div class="item"><div class="desc">add step component</div><div class="action">HOLD Shift + PRESS step (step flashes) + PRESS step component & choose value</div></div>
+    <div class="item"><div class="desc">edit current step component</div><div class="action">HOLD shift &gt; steps with components bright &gt; press bright step &gt; step flashes &gt; shows assignment &gt; remove & add back &gt; confirm settings</div></div>
+  </div>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OP-XY Marker Breakdown</title>
@@ -169,7 +271,7 @@
 
 
 
-
+ -->
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
